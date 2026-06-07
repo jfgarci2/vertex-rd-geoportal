@@ -5,7 +5,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from sqlalchemy import create_engine, text
 from sqlalchemy.exc import OperationalError
 
@@ -333,8 +333,43 @@ def config_runtime():
     return PlainTextResponse(body, media_type="application/javascript")
 
 
-# Static geoportal (css, js, data, assets, index.html) — after all /api routes
-if STATIC_DIR.is_dir() and (STATIC_DIR / "index.html").is_file():
-    app.mount("/", StaticFiles(directory=str(STATIC_DIR), html=True), name="static")
-else:
-    print(f"[VERTEX] WARNING: static files missing under {STATIC_DIR}")
+STATIC_FOLDERS = ("css", "js", "data", "assets")
+
+
+def _safe_file(base: Path, rel: str) -> Path:
+    target = (base / rel).resolve()
+    if not str(target).startswith(str(base.resolve())):
+        raise HTTPException(status_code=404, detail="Not found")
+    if not target.is_file():
+        raise HTTPException(status_code=404, detail="Not found")
+    return target
+
+
+def register_static_routes() -> None:
+    index = STATIC_DIR / "index.html"
+    if index.is_file():
+
+        @app.get("/", include_in_schema=False)
+        def serve_index():
+            return FileResponse(index, media_type="text/html")
+
+    for folder in STATIC_FOLDERS:
+        base = STATIC_DIR / folder
+        if not base.is_dir():
+            print(f"[VERTEX] missing folder: {base}")
+            continue
+
+        def make_handler(root: Path):
+            def handler(path: str):
+                return FileResponse(_safe_file(root, path))
+            return handler
+
+        app.add_api_route(
+            f"/{folder}/{{path:path}}",
+            make_handler(base),
+            methods=["GET", "HEAD"],
+            include_in_schema=False,
+        )
+
+
+register_static_routes()
