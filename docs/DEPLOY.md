@@ -107,7 +107,28 @@ You do **not** need Docker on your PC. Render runs Python from your GitHub repo.
 4. **Manual Deploy → Clear build cache & deploy**
 
 Success check: `/api/health` shows `"css_exists": true`.  
-**"Sin base de datos"** is normal without `predios.db` — the map still works.
+**"Sin predios.db"** is normal without the database file — map + JSON still work.
+
+### Activar SQLite 140K en Render (opcional)
+
+`data/predios.db` (~38 MB) **no está en GitHub** (gitignore). Para búsqueda API completa:
+
+1. En tu PC, el archivo está en:  
+   `vertex-rd-geoportal\data\predios.db`  
+   (si no existe: `python scripts/export_predios_full.py`)
+
+2. Render → servicio → **Environment** → baja a **Secret Files**
+
+3. **Add Secret File**
+   - Filename: `predios.db`
+   - Sube el archivo desde tu PC
+
+4. **Manual Deploy** (redeploy)
+
+5. Verifica: `/api/health` debe decir  
+   `"status": "ok", "backend": "sqlite", "predios": 140237`
+
+El backend lee automáticamente `/etc/secrets/predios.db` en Render.
 
 ---
 

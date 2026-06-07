@@ -95,12 +95,23 @@ def _static_meta():
     }
 
 
+def _sqlite_health():
+    if not sqlite.db_available():
+        return None
+    try:
+        n = sqlite.count_predios()
+        return {"status": "ok", "backend": "sqlite", "predios": n, "db_path": str(sqlite.db_path())}
+    except Exception as exc:
+        return {"status": "degraded", "detail": f"SQLite: {exc}", "db_path": str(sqlite.db_path())}
+
+
 @app.get("/api/health")
 def health():
     meta = _static_meta()
+    sqlite_info = _sqlite_health()
+    if sqlite_info and sqlite_info.get("status") == "ok":
+        return {**sqlite_info, **meta}
     engine = get_engine()
-    if _use_sqlite and sqlite.db_available():
-        return {"status": "ok", "backend": "sqlite", "predios": sqlite.count_predios(), **meta}
     if engine:
         try:
             with engine.connect() as conn:
@@ -108,27 +119,38 @@ def health():
             return {"status": "ok", "backend": "postgis", "predios": n, **meta}
         except Exception:
             pass
-    if sqlite.db_available():
-        return {"status": "ok", "backend": "sqlite", "predios": sqlite.count_predios(), **meta}
-    return {"status": "degraded", "detail": "Sin base de datos", **meta}
+    if sqlite_info:
+        return {**sqlite_info, **meta}
+    return {
+        "status": "degraded",
+        "detail": "Sin predios.db — sube el archivo en Render Secret Files o usa modo JSON",
+        "db_expected": str(sqlite.db_path()),
+        **meta,
+    }
 
 
 @app.get("/api/kpis")
 def kpis():
     engine = get_engine()
-    if _use_sqlite or not engine:
+    if (_use_sqlite or not engine) and sqlite.db_available():
         n = sqlite.count_predios()
         return {
             "predios": n, "barrios": 70, "sub_barrios": 245, "manzanas": 4287,
             "espacios_abiertos": 542, "parques_plazas": 179, "zonas_informales": 824,
             "vias": 12429, "longitud_vias_km": 1496,
         }
-    with engine.connect() as conn:
-        total = conn.execute(text("SELECT COUNT(*) FROM predios")).scalar()
-        barrios = conn.execute(text("SELECT COUNT(DISTINCT barrio) FROM predios")).scalar()
-        sub = conn.execute(text("SELECT COUNT(DISTINCT sub_barrio) FROM predios")).scalar()
+    if engine:
+        with engine.connect() as conn:
+            total = conn.execute(text("SELECT COUNT(*) FROM predios")).scalar()
+            barrios = conn.execute(text("SELECT COUNT(DISTINCT barrio) FROM predios")).scalar()
+            sub = conn.execute(text("SELECT COUNT(DISTINCT sub_barrio) FROM predios")).scalar()
+        return {
+            "predios": total, "barrios": barrios, "sub_barrios": sub, "manzanas": 4287,
+            "espacios_abiertos": 542, "parques_plazas": 179, "zonas_informales": 824,
+            "vias": 12429, "longitud_vias_km": 1496,
+        }
     return {
-        "predios": total, "barrios": barrios, "sub_barrios": sub, "manzanas": 4287,
+        "predios": 140237, "barrios": 70, "sub_barrios": 245, "manzanas": 4287,
         "espacios_abiertos": 542, "parques_plazas": 179, "zonas_informales": 824,
         "vias": 12429, "longitud_vias_km": 1496,
     }

@@ -12,6 +12,7 @@
     const h = await window.VertexAPI?.health();
     apiOnline = h?.status === 'ok';
     updateApiBadge(h);
+    window.VERTEX_API_DEGRADED = h?.status === 'degraded';
 
     const [d, dr, r] = await Promise.all([
       fetch('data/densidades.json').then((x) => x.json()),
@@ -35,6 +36,9 @@
     if (h?.status === 'ok') {
       el.textContent = `API ${h.backend} · ${Number(h.predios).toLocaleString('es-DO')} predios`;
       el.className = 'api-badge online';
+    } else if (h?.status === 'degraded') {
+      el.textContent = 'Sin SQLite en nube · modo JSON';
+      el.className = 'api-badge degraded';
     } else {
       el.textContent = 'API offline — modo local';
       el.className = 'api-badge offline';

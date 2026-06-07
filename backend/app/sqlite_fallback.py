@@ -5,21 +5,27 @@ import sqlite3
 from collections import Counter
 from pathlib import Path
 
-DB_PATH = Path(__file__).resolve().parents[2] / "data" / "predios.db"
 DATA_DIR = Path(__file__).resolve().parents[2] / "data"
+_RENDER_SECRET_DB = Path("/etc/secrets/predios.db")
+_LOCAL_DB = DATA_DIR / "predios.db"
+
+
+def db_path() -> Path:
+    """Render Secret File, local data/, or env override."""
+    env = os.getenv("VERTEX_PREDIOS_DB")
+    if env:
+        return Path(env)
+    if _RENDER_SECRET_DB.is_file():
+        return _RENDER_SECRET_DB
+    return _LOCAL_DB
 
 
 def db_available() -> bool:
-    return DB_PATH.exists()
-
-
-def _conn():
-    return sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
+    return db_path().is_file()
 
 
 def get_conn():
-    c = sqlite3.connect(DB_PATH)
+    c = sqlite3.connect(db_path())
     c.row_factory = sqlite3.Row
     return c
 
