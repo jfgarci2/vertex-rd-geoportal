@@ -64,8 +64,8 @@ window.VERTEX_applyRuntime = function () {
     s.onerror = done;
     document.head.appendChild(s);
   }
-  loadScript('js/config.local.js', function () {
+  loadScript('/js/config.local.js', function () {
     if (window.VERTEX_CONFIG.mapboxToken) return;
-    loadScript('js/config.runtime.js', function () {});
+    loadScript('/js/config.runtime.js', function () {});
   });
 })();
