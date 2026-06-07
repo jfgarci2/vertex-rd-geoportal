@@ -10,11 +10,11 @@ Production-style geoportal for **Distrito Nacional, Dominican Republic**: **140,
 
 | Resource | URL |
 |----------|-----|
-| **Full stack (recommended)** | Deploy on [Railway](https://railway.app) or [Render](https://render.com) — see [docs/DEPLOY.md](docs/DEPLOY.md) |
-| **Static mirror** | [GitHub Pages](https://jfgarci2.github.io/vertex-rd-geoportal/) (map + JSON; API search requires full deploy) |
+| **Live demo (full stack)** | https://vertex-rd-geoportal.onrender.com |
+| **API health** | https://vertex-rd-geoportal.onrender.com/api/health |
+| **Code** | https://github.com/jfgarci2/vertex-rd-geoportal |
+| **Educational PDF report** | [docs/INFORME_EDUCATIVO_COMPLETO.html](docs/INFORME_EDUCATIVO_COMPLETO.html) (Ctrl+P → Save as PDF) |
 | **Portfolio** | [jfgarcia-portfolio.vercel.app](https://jfgarcia-portfolio.vercel.app/es) |
-| **Recruiter brief** | [docs/RECRUITER_SUMMARY.md](docs/RECRUITER_SUMMARY.md) |
-| **Case study** | [docs/CASE_STUDY.md](docs/CASE_STUDY.md) |
 
 ---
 
