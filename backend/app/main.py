@@ -15,13 +15,22 @@ load_dotenv()
 
 
 def resolve_static_dir() -> Path:
-    """Locate geoportal root (index.html) — works locally and in Docker on Render."""
-    env = os.getenv("VERTEX_STATIC_DIR")
-    if env:
-        return Path(env)
+    """Locate geoportal root (index.html + css/js). Local, Render Python, or Docker."""
     here = Path(__file__).resolve()
-    for candidate in (here.parents[2], here.parents[1], Path("/app"), here.parents[3]):
-        if (candidate / "index.html").is_file():
+    candidates = [
+        Path(os.getenv("VERTEX_STATIC_DIR", "")),
+        here.parents[2],
+        Path("/opt/render/project/src"),
+        Path("/app"),
+        here.parents[1],
+    ]
+    for candidate in candidates:
+        if not candidate or str(candidate) in (".", ""):
+            continue
+        if (candidate / "index.html").is_file() and (candidate / "css").is_dir():
+            return candidate
+    for candidate in candidates:
+        if candidate and (candidate / "index.html").is_file():
             return candidate
     return here.parents[2]
 

@@ -1,13 +1,13 @@
 services:
   - type: web
     name: vertex-rd-geoportal
-    runtime: docker
-    dockerfilePath: ./Dockerfile
+    runtime: python
     plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /api/health
     envVars:
       - key: MAPBOX_ACCESS_TOKEN
         sync: false
-      - key: DATABASE_URL
-        sync: false
-        optional: true
+      - key: PYTHON_VERSION
+        value: "3.11.9"

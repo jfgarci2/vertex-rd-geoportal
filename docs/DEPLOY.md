@@ -85,12 +85,29 @@ For Pages with Mapbox token, add repo secret `MAPBOX_ACCESS_TOKEN` (see `.github
 
 ---
 
-## Render
+## Render (recommended — **Python, no Docker**)
 
-1. https://dashboard.render.com → **New → Blueprint**
-2. Connect repo — Render reads `render.yaml`
-3. Set `MAPBOX_ACCESS_TOKEN` in dashboard when prompted
-4. Ensure `data/predios.db` exists in deployed image (build hook or manual upload)
+You do **not** need Docker on your PC. Render runs Python from your GitHub repo.
+
+### Settings
+
+| Field | Value |
+|-------|--------|
+| **Runtime** | **Python 3** (not Docker) |
+| **Build Command** | `pip install -r backend/requirements.txt` |
+| **Start Command** | `cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT` |
+| **Health Check Path** | `/api/health` |
+| **Env var** | `MAPBOX_ACCESS_TOKEN` = your `pk...` token |
+
+### Fix if `css_exists: false` (Docker deploy)
+
+1. **Settings → change Runtime from Docker to Python 3**
+2. Set Build / Start commands as above
+3. **Remove** `VERTEX_STATIC_DIR` if it exists in Environment
+4. **Manual Deploy → Clear build cache & deploy**
+
+Success check: `/api/health` shows `"css_exists": true`.  
+**"Sin base de datos"** is normal without `predios.db` — the map still works.
 
 ---
 
