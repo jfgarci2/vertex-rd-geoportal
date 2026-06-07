@@ -5,7 +5,6 @@ from pathlib import Path
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy import create_engine, text
 from sqlalchemy.exc import OperationalError
@@ -82,6 +81,8 @@ def _static_meta():
     return {
         "static_dir": str(STATIC_DIR),
         "index_exists": (STATIC_DIR / "index.html").is_file(),
+        "css_exists": (STATIC_DIR / "css").is_dir(),
+        "js_exists": (STATIC_DIR / "js").is_dir(),
     }
 
 
@@ -101,17 +102,6 @@ def health():
     if sqlite.db_available():
         return {"status": "ok", "backend": "sqlite", "predios": sqlite.count_predios(), **meta}
     return {"status": "degraded", "detail": "Sin base de datos", **meta}
-
-
-@app.get("/")
-def serve_index():
-    index = STATIC_DIR / "index.html"
-    if not index.is_file():
-        raise HTTPException(
-            status_code=500,
-            detail=f"index.html not found under {STATIC_DIR}",
-        )
-    return FileResponse(index, media_type="text/html")
 
 
 @app.get("/api/kpis")
@@ -343,17 +333,8 @@ def config_runtime():
     return PlainTextResponse(body, media_type="application/javascript")
 
 
-def mount_static_assets():
-    """Serve css/js/data/assets without a root mount that can shadow /api routes."""
-    mounts = {
-        "css": STATIC_DIR / "css",
-        "js": STATIC_DIR / "js",
-        "data": STATIC_DIR / "data",
-        "assets": STATIC_DIR / "assets",
-    }
-    for name, folder in mounts.items():
-        if folder.is_dir():
-            app.mount(f"/{name}", StaticFiles(directory=str(folder)), name=name)
-
-
-mount_static_assets()
+# Static geoportal (css, js, data, assets, index.html) — after all /api routes
+if STATIC_DIR.is_dir() and (STATIC_DIR / "index.html").is_file():
+    app.mount("/", StaticFiles(directory=str(STATIC_DIR), html=True), name="static")
+else:
+    print(f"[VERTEX] WARNING: static files missing under {STATIC_DIR}")
