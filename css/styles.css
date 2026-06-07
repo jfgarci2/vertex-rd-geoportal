@@ -557,6 +557,12 @@ body {
   border: 1px solid rgba(231, 76, 60, 0.25);
 }
 
+.api-badge.degraded {
+  background: rgba(241, 196, 15, 0.12);
+  color: #f1c40f;
+  border: 1px solid rgba(241, 196, 15, 0.3);
+}
+
 .search-input-wrap {
   flex: 1;
   position: relative;
