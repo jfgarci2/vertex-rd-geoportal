@@ -1,0 +1,1869 @@
+[
+  {
+    "barrio": "CIUDAD COLONIAL",
+    "cod_barrio": 65,
+    "parques": 25,
+    "espacios_abiertos": 40,
+    "parques_categoria": [
+      {
+        "categoria": "PLAZAS",
+        "cantidad": 13
+      },
+      {
+        "categoria": "PARQUES",
+        "cantidad": 4
+      },
+      {
+        "categoria": "PLAZOLETAS",
+        "cantidad": 4
+      },
+      {
+        "categoria": "AREAS VERDES",
+        "cantidad": 2
+      },
+      {
+        "categoria": "Sin categoría",
+        "cantidad": 2
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 21
+      },
+      {
+        "clasificacion": "ESCENARIOS PATRIMONIALES (HISTÓRICOS Y CONMEMORATIVOS",
+        "cantidad": 6
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 6
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "ÁREAS VERDES LIBRES",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "JARDINES DEL NORTE",
+    "cod_barrio": 14,
+    "parques": 12,
+    "espacios_abiertos": 29,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 8
+      },
+      {
+        "categoria": "PARQUE",
+        "cantidad": 3
+      },
+      {
+        "categoria": "ROTONDAS",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES URBANOS Y SECTORIALES",
+        "cantidad": 6
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 5
+      },
+      {
+        "clasificacion": "ÁREAS VERDES LIBRES",
+        "cantidad": 4
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 4
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "ZONA PROTECTORA",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "EQUIPAMIENTO COMPLEMENTARIO",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "ALTOS DE ARROYO HONDO",
+    "cod_barrio": 4,
+    "parques": 8,
+    "espacios_abiertos": 27,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 7
+      },
+      {
+        "categoria": "Sin categoría",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 10
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 7
+      },
+      {
+        "clasificacion": "ZONA PROTECTORA",
+        "cantidad": 4
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "ÁREAS VERDES LIBRES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES URBANOS Y SECTORIALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "NUEVO ARROYO HONDO",
+    "cod_barrio": 16,
+    "parques": 2,
+    "espacios_abiertos": 28,
+    "parques_categoria": [
+      {
+        "categoria": "PLAZAS",
+        "cantidad": 2
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "ZONA PROTECTORA",
+        "cantidad": 11
+      },
+      {
+        "clasificacion": "ÁREAS VERDES LIBRES",
+        "cantidad": 5
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 5
+      },
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES URBANOS Y SECTORIALES",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "LOS RIOS",
+    "cod_barrio": 5,
+    "parques": 5,
+    "espacios_abiertos": 20,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 3
+      },
+      {
+        "categoria": "AREAS VERDES",
+        "cantidad": 2
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "ZONA PROTECTORA",
+        "cantidad": 10
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 4
+      },
+      {
+        "clasificacion": "ÁREAS VERDES LIBRES",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES URBANOS Y SECTORIALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "MIRAMAR",
+    "cod_barrio": 26,
+    "parques": 9,
+    "espacios_abiertos": 16,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 9
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 8
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 4
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "ESCENARIOS PATRIMONIALES (HISTÓRICOS Y CONMEMORATIVOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "GAZCUE",
+    "cod_barrio": 53,
+    "parques": 6,
+    "espacios_abiertos": 16,
+    "parques_categoria": [
+      {
+        "categoria": "PLAZAS",
+        "cantidad": 3
+      },
+      {
+        "categoria": "PARQUES",
+        "cantidad": 2
+      },
+      {
+        "categoria": "PLAZOLETAS",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 7
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 4
+      },
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES URBANOS Y SECTORIALES",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "Barrio 0",
+    "cod_barrio": 0,
+    "parques": 11,
+    "espacios_abiertos": 8,
+    "parques_categoria": [
+      {
+        "categoria": "Sin categoría",
+        "cantidad": 11
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "Sin categoría",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "EQUIPAMIENTO COMPLEMENTARIO",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "ÁREAS VERDES LIBRES",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "PARQUE MIRADOR SUR",
+    "cod_barrio": 9,
+    "parques": 1,
+    "espacios_abiertos": 17,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 15
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 2
+      }
+    ]
+  },
+  {
+    "barrio": "CRISTO REY",
+    "cod_barrio": 46,
+    "parques": 4,
+    "espacios_abiertos": 14,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 2
+      },
+      {
+        "categoria": "Sin categoría",
+        "cantidad": 2
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 6
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES URBANOS Y SECTORIALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "ZONA PROTECTORA",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "ARROYO MANZANO",
+    "cod_barrio": 3,
+    "parques": 1,
+    "espacios_abiertos": 16,
+    "parques_categoria": [
+      {
+        "categoria": "AREAS VERDES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "ÁREAS VERDES LIBRES",
+        "cantidad": 5
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 5
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 5
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "HONDURAS DEL OESTE",
+    "cod_barrio": 7,
+    "parques": 4,
+    "espacios_abiertos": 13,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 2
+      },
+      {
+        "categoria": "PLAZAS",
+        "cantidad": 1
+      },
+      {
+        "categoria": "AREAS VERDES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 8
+      },
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "CIUDAD NUEVA",
+    "cod_barrio": 54,
+    "parques": 7,
+    "espacios_abiertos": 10,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 3
+      },
+      {
+        "categoria": "PLAZAS",
+        "cantidad": 3
+      },
+      {
+        "categoria": "AREAS VERDES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 4
+      },
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 4
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "CIUDAD UNIVERSITARIA",
+    "cod_barrio": 40,
+    "parques": 3,
+    "espacios_abiertos": 13,
+    "parques_categoria": [
+      {
+        "categoria": "PLAZAS",
+        "cantidad": 2
+      },
+      {
+        "categoria": "AREAS VERDES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 7
+      },
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 5
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "DOMINGO SAVIO",
+    "cod_barrio": 66,
+    "parques": 3,
+    "espacios_abiertos": 13,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 3
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 9
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES URBANOS Y SECTORIALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "ZONA PROTECTORA",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "VIEJO ARROYO HONDO",
+    "cod_barrio": 18,
+    "parques": 3,
+    "espacios_abiertos": 11,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 3
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "ZONA PROTECTORA",
+        "cantidad": 4
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "ÁREAS VERDES LIBRES",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "LOS RESTAURADORES",
+    "cod_barrio": 12,
+    "parques": 4,
+    "espacios_abiertos": 9,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 4
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES URBANOS Y SECTORIALES",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "TROPICAL METALDOM",
+    "cod_barrio": 27,
+    "parques": 4,
+    "espacios_abiertos": 9,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 3
+      },
+      {
+        "categoria": "CLUB",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "HONDURAS DEL NORTE",
+    "cod_barrio": 8,
+    "parques": 5,
+    "espacios_abiertos": 7,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 5
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 4
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES URBANOS Y SECTORIALES",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "ENSANCHE LA FE",
+    "cod_barrio": 44,
+    "parques": 2,
+    "espacios_abiertos": 10,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 2
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 8
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "BUENOS AIRES (INDEPENDENCIA)",
+    "cod_barrio": 25,
+    "parques": 4,
+    "espacios_abiertos": 7,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 4
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 2
+      }
+    ]
+  },
+  {
+    "barrio": "VILLA FRANCISCA",
+    "cod_barrio": 64,
+    "parques": 4,
+    "espacios_abiertos": 7,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 3
+      },
+      {
+        "categoria": "PLAZOLETAS",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 4
+      },
+      {
+        "clasificacion": "PARQUES URBANOS Y SECTORIALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "LA ESPERILLA",
+    "cod_barrio": 41,
+    "parques": 3,
+    "espacios_abiertos": 7,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 2
+      },
+      {
+        "categoria": "PLAZAS",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 5
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "LA AGUSTINA",
+    "cod_barrio": 45,
+    "parques": 1,
+    "espacios_abiertos": 9,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 6
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "ZONA PROTECTORA",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "VILLA JUANA",
+    "cod_barrio": 50,
+    "parques": 2,
+    "espacios_abiertos": 8,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 2
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 5
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "VILLA CONSUELO",
+    "cod_barrio": 56,
+    "parques": 1,
+    "espacios_abiertos": 9,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 4
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 4
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "LA ISABELA",
+    "cod_barrio": 68,
+    "parques": 0,
+    "espacios_abiertos": 10,
+    "parques_categoria": [],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "ZONA PROTECTORA",
+        "cantidad": 7
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "CACIQUE",
+    "cod_barrio": 37,
+    "parques": 2,
+    "espacios_abiertos": 7,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 1
+      },
+      {
+        "categoria": "Sin categoría",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "SAN CARLOS",
+    "cod_barrio": 55,
+    "parques": 3,
+    "espacios_abiertos": 6,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 2
+      },
+      {
+        "categoria": "PLAZAS",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "ESCENARIOS PATRIMONIALES (HISTÓRICOS Y CONMEMORATIVOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "MARIA AUXILIADORA",
+    "cod_barrio": 62,
+    "parques": 1,
+    "espacios_abiertos": 8,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 6
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "SAN GERONIMO",
+    "cod_barrio": 13,
+    "parques": 2,
+    "espacios_abiertos": 6,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 2
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES URBANOS Y SECTORIALES",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "ENSANCHE QUISQUEYA",
+    "cod_barrio": 31,
+    "parques": 1,
+    "espacios_abiertos": 7,
+    "parques_categoria": [
+      {
+        "categoria": "BULEVAR",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 6
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "GENERAL ANTONIO DUVERGE",
+    "cod_barrio": 35,
+    "parques": 3,
+    "espacios_abiertos": 5,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 2
+      },
+      {
+        "categoria": "PLAZAS",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "LA ZURZA",
+    "cod_barrio": 48,
+    "parques": 2,
+    "espacios_abiertos": 6,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 1
+      },
+      {
+        "categoria": "AREAS VERDES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "ÁREAS NATURALES",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "ZONA PROTECTORA",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "VILLA AGRICOLAS",
+    "cod_barrio": 49,
+    "parques": 2,
+    "espacios_abiertos": 6,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 2
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 4
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 2
+      }
+    ]
+  },
+  {
+    "barrio": "RENACIMIENTO",
+    "cod_barrio": 11,
+    "parques": 3,
+    "espacios_abiertos": 4,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 2
+      },
+      {
+        "categoria": "PLAZAS",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "CENTRO DE LOS HEROES",
+    "cod_barrio": 38,
+    "parques": 2,
+    "espacios_abiertos": 5,
+    "parques_categoria": [
+      {
+        "categoria": "PLAZOLETAS",
+        "cantidad": 1
+      },
+      {
+        "categoria": "PLAZAS",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 4
+      },
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "MIRAFLORES",
+    "cod_barrio": 51,
+    "parques": 2,
+    "espacios_abiertos": 5,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 2
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "MEJORAMIENTO SOCIAL",
+    "cod_barrio": 63,
+    "parques": 1,
+    "espacios_abiertos": 6,
+    "parques_categoria": [
+      {
+        "categoria": "PLAZAS",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "LOS CACICAZGOS",
+    "cod_barrio": 10,
+    "parques": 3,
+    "espacios_abiertos": 3,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 1
+      },
+      {
+        "categoria": "PLAZAS",
+        "cantidad": 1
+      },
+      {
+        "categoria": "AREAS VERDES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES URBANOS Y SECTORIALES",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "ESCENARIOS PATRIMONIALES (HISTÓRICOS Y CONMEMORATIVOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "JARDINES DEL SUR",
+    "cod_barrio": 28,
+    "parques": 1,
+    "espacios_abiertos": 5,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 2
+      }
+    ]
+  },
+  {
+    "barrio": "LA JULIA",
+    "cod_barrio": 33,
+    "parques": 1,
+    "espacios_abiertos": 5,
+    "parques_categoria": [
+      {
+        "categoria": "PLAZAS",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "ÁREAS VERDES LIBRES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "PALMA REAL",
+    "cod_barrio": 2,
+    "parques": 0,
+    "espacios_abiertos": 5,
+    "parques_categoria": [],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "ZONA PROTECTORA",
+        "cantidad": 2
+      }
+    ]
+  },
+  {
+    "barrio": "CERROS DE ARROYO HONDO",
+    "cod_barrio": 17,
+    "parques": 0,
+    "espacios_abiertos": 5,
+    "parques_categoria": [],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "ZONA PROTECTORA",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES URBANOS Y SECTORIALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "ÁREAS VERDES LIBRES",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "MIRADOR NORTE",
+    "cod_barrio": 23,
+    "parques": 2,
+    "espacios_abiertos": 3,
+    "parques_categoria": [
+      {
+        "categoria": "PLAZAS",
+        "cantidad": 2
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "30 DE MAYO",
+    "cod_barrio": 36,
+    "parques": 1,
+    "espacios_abiertos": 4,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 2
+      }
+    ]
+  },
+  {
+    "barrio": "MATA HAMBRE",
+    "cod_barrio": 39,
+    "parques": 1,
+    "espacios_abiertos": 4,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "ENSANCHE LUPERON",
+    "cod_barrio": 57,
+    "parques": 1,
+    "espacios_abiertos": 4,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "ENSANCHE ESPAILLAT",
+    "cod_barrio": 61,
+    "parques": 1,
+    "espacios_abiertos": 4,
+    "parques_categoria": [
+      {
+        "categoria": "PLAZAS",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "LOS PERALEJOS",
+    "cod_barrio": 1,
+    "parques": 1,
+    "espacios_abiertos": 3,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "JULIETA MORALES",
+    "cod_barrio": 20,
+    "parques": 0,
+    "espacios_abiertos": 4,
+    "parques_categoria": [],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES URBANOS Y SECTORIALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "ÁREAS NATURALES",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "LOS PRADOS",
+    "cod_barrio": 21,
+    "parques": 1,
+    "espacios_abiertos": 3,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "PIANTINI",
+    "cod_barrio": 32,
+    "parques": 2,
+    "espacios_abiertos": 2,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 2
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "ENSANCHE CAPOTILLO",
+    "cod_barrio": 58,
+    "parques": 0,
+    "espacios_abiertos": 4,
+    "parques_categoria": [],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "ZONA PROTECTORA",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "SIMON BOLIVAR",
+    "cod_barrio": 59,
+    "parques": 0,
+    "espacios_abiertos": 4,
+    "parques_categoria": [],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 3
+      },
+      {
+        "clasificacion": "ZONA PROTECTORA",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "EL MILLON",
+    "cod_barrio": 22,
+    "parques": 1,
+    "espacios_abiertos": 2,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "MIRADOR SUR",
+    "cod_barrio": 24,
+    "parques": 1,
+    "espacios_abiertos": 2,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "ATALA",
+    "cod_barrio": 29,
+    "parques": 1,
+    "espacios_abiertos": 2,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "BELLA VISTA",
+    "cod_barrio": 30,
+    "parques": 1,
+    "espacios_abiertos": 2,
+    "parques_categoria": [
+      {
+        "categoria": "AREAS VERDES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES URBANOS Y SECTORIALES",
+        "cantidad": 2
+      }
+    ]
+  },
+  {
+    "barrio": "ENSANCHE NACO",
+    "cod_barrio": 42,
+    "parques": 1,
+    "espacios_abiertos": 2,
+    "parques_categoria": [
+      {
+        "categoria": "PARQUES",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES VECINALES",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "CENTRO OLIMPICO",
+    "cod_barrio": 43,
+    "parques": 0,
+    "espacios_abiertos": 3,
+    "parques_categoria": [],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "JARDIN ZOOLOGICO",
+    "cod_barrio": 47,
+    "parques": 0,
+    "espacios_abiertos": 3,
+    "parques_categoria": [],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 1
+      },
+      {
+        "clasificacion": "ÁREAS VERDES LIBRES",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "GUALEY",
+    "cod_barrio": 67,
+    "parques": 0,
+    "espacios_abiertos": 3,
+    "parques_categoria": [],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "ZONA PROTECTORA",
+        "cantidad": 2
+      },
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "PUERTO ISABELA",
+    "cod_barrio": 6,
+    "parques": 0,
+    "espacios_abiertos": 2,
+    "parques_categoria": [],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "ÁREAS VERDES LIBRES",
+        "cantidad": 2
+      }
+    ]
+  },
+  {
+    "barrio": "NUESTRA SEÑORA DE LA PAZ",
+    "cod_barrio": 34,
+    "parques": 0,
+    "espacios_abiertos": 2,
+    "parques_categoria": [],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 2
+      }
+    ]
+  },
+  {
+    "barrio": "SAN JUAN BOSCO",
+    "cod_barrio": 52,
+    "parques": 1,
+    "espacios_abiertos": 1,
+    "parques_categoria": [
+      {
+        "categoria": "PLAZAS",
+        "cantidad": 1
+      }
+    ],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PLAZAS Y PASEOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "JARDIN BOTANICO",
+    "cod_barrio": 15,
+    "parques": 0,
+    "espacios_abiertos": 1,
+    "parques_categoria": [],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+        "cantidad": 1
+      }
+    ]
+  },
+  {
+    "barrio": "24 DE ABRIL",
+    "cod_barrio": 60,
+    "parques": 0,
+    "espacios_abiertos": 1,
+    "parques_categoria": [],
+    "espacios_clasificacion": [
+      {
+        "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+        "cantidad": 1
+      }
+    ]
+  }
+]

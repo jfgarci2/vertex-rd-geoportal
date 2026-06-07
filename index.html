@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>VERTEX RD — Geoportal Catastral 360°</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Geoportal avanzado de análisis predial y urbano — Distrito Nacional, República Dominicana. GIS + Analytics Engineering.">
+  <meta name="author" content="José Fernando García Pérez">
+
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
+  <link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-logo-shell">
+          <span class="brand-logo-glow" aria-hidden="true"></span>
+          <img src="assets/logo/Logo-VertexRD.jpeg" alt="VERTEX RD" class="brand-logo">
+        </div>
+        <div class="brand-copy">
+          <div class="brand-title-row">
+            <h1>VERTEX RD</h1>
+            <span class="brand-tag">360°</span>
+          </div>
+          <span class="brand-subtitle">Dashboard Predial · Distrito Nacional</span>
+        </div>
+      </div>
+
+      <div class="header-search-wrap">
+        <div class="search-toolbar">
+          <div class="search-row-primary">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <div class="search-input-wrap" id="search-input-wrap">
+              <input type="text" id="header-catastro-search"
+                placeholder="Barrio + uso — ej. Gazcue residencial"
+                autocomplete="off">
+              <button type="button" id="header-search-clear-btn" class="search-clear-btn hidden"
+                title="Borrar búsqueda" aria-label="Borrar búsqueda">✕</button>
+            </div>
+            <button type="button" id="header-search-btn" title="Buscar predio">Buscar</button>
+          </div>
+          <div class="search-row-filters">
+            <select id="filter-level" class="search-select compact" title="Nivel territorial">
+              <option value="barrio">Barrio</option>
+              <option value="subbarrio">Sub-barrio</option>
+            </select>
+            <select id="filter-barrio" class="search-select">
+              <option value="">Barrio…</option>
+            </select>
+            <select id="filter-subbarrio" class="search-select">
+              <option value="">Sub-barrio…</option>
+            </select>
+            <button type="button" id="filter-go-btn" class="search-chip" title="Zoom al territorio">📍 Ir</button>
+            <input type="text" id="browse-detail" class="search-input-mini" placeholder="Uso o actividad…">
+            <button type="button" id="browse-predios-btn" class="search-chip gold">Ver lotes</button>
+            <button type="button" id="filter-clear-btn" class="search-chip muted" title="Limpiar">✕</button>
+          </div>
+        </div>
+        <div id="search-suggestions" class="search-suggestions"></div>
+      </div>
+
+      <div id="api-status" class="api-badge offline">Conectando API...</div>
+
+      <div class="header-kpi" id="header-kpi">
+        <div class="label" id="header-kpi-label">Predios DN</div>
+        <div class="value" id="header-predios">—</div>
+      </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" aria-label="Secciones del dashboard">
+      <div class="sidebar-scroll">
+        <div class="nav-section nav-section-map">
+          <span class="nav-section-label">Mapa</span>
+          <button class="nav-btn active" data-view="presentacion">
+            <span class="nav-icon-wrap" aria-hidden="true"><span class="nav-icon">🗺️</span></span>
+            <span class="nav-label">Presentación</span>
+            <span class="nav-chevron" aria-hidden="true">›</span>
+          </button>
+          <button class="nav-btn" data-view="subbarrios">
+            <span class="nav-icon-wrap" aria-hidden="true"><span class="nav-icon">📍</span></span>
+            <span class="nav-label">Mapa Subbarrios</span>
+            <span class="nav-chevron" aria-hidden="true">›</span>
+          </button>
+        </div>
+        <div class="nav-section nav-section-territory">
+          <span class="nav-section-label">Territorio</span>
+          <button class="nav-btn" data-view="espacios">
+            <span class="nav-icon-wrap" aria-hidden="true"><span class="nav-icon">🌳</span></span>
+            <span class="nav-label">Espacios Públicos</span>
+            <span class="nav-chevron" aria-hidden="true">›</span>
+          </button>
+          <button class="nav-btn" data-view="vias">
+            <span class="nav-icon-wrap" aria-hidden="true"><span class="nav-icon">🛣️</span></span>
+            <span class="nav-label">Vías</span>
+            <span class="nav-chevron" aria-hidden="true">›</span>
+          </button>
+          <button class="nav-btn" data-view="estadisticas">
+            <span class="nav-icon-wrap" aria-hidden="true"><span class="nav-icon">📊</span></span>
+            <span class="nav-label">Estadísticas Prediales</span>
+            <span class="nav-chevron" aria-hidden="true">›</span>
+          </button>
+        </div>
+        <div class="nav-section nav-section-predio">
+          <span class="nav-section-label">Predio</span>
+          <button class="nav-btn" data-view="ficha">
+            <span class="nav-icon-wrap" aria-hidden="true"><span class="nav-icon">📋</span></span>
+            <span class="nav-label">Ficha Predial</span>
+            <span class="nav-chevron" aria-hidden="true">›</span>
+          </button>
+          <button class="nav-btn" data-view="retiros">
+            <span class="nav-icon-wrap" aria-hidden="true"><span class="nav-icon">📐</span></span>
+            <span class="nav-label">Retiros y Linderos</span>
+            <span class="nav-chevron" aria-hidden="true">›</span>
+          </button>
+          <button class="nav-btn" data-view="densidades">
+            <span class="nav-icon-wrap" aria-hidden="true"><span class="nav-icon">🏙️</span></span>
+            <span class="nav-label">Densidades Renacimiento</span>
+            <span class="nav-chevron" aria-hidden="true">›</span>
+          </button>
+        </div>
+        <div class="nav-section nav-section-kpi">
+          <span class="nav-section-label">Indicadores</span>
+          <button class="nav-btn" data-view="indicadores">
+            <span class="nav-icon-wrap" aria-hidden="true"><span class="nav-icon">📈</span></span>
+            <span class="nav-label">Indicadores</span>
+            <span class="nav-chevron" aria-hidden="true">›</span>
+          </button>
+        </div>
+      </div>
+      <div class="sidebar-foot">
+        <div class="sidebar-stat">
+          <span class="sidebar-stat-val" id="sidebar-predios">140,237</span>
+          <span class="sidebar-stat-lbl">Predios</span>
+        </div>
+        <div class="sidebar-stat">
+          <span class="sidebar-stat-val">70</span>
+          <span class="sidebar-stat-lbl">Barrios</span>
+        </div>
+        <div class="sidebar-brand">VERTEX RD</div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- PRESENTACIÓN: Mapa interactivo (html59) -->
+      <section id="view-presentacion" class="view active">
+        <div id="map"></div>
+
+        <button type="button" id="map-home-btn" class="map-home-btn" title="Centrar Distrito Nacional (vista inicial)">
+          <span class="home-icon" aria-hidden="true">⌂</span>
+          <span class="home-label">Inicio</span>
+        </button>
+        <button type="button" id="map-clear-predio-btn" class="map-clear-predio-btn hidden" title="Quitar predio seleccionado">
+          <span class="clear-icon" aria-hidden="true">✕</span>
+          <span class="home-label">Limpiar</span>
+        </button>
+
+        <div class="map-side-panel" id="map-side-panel">
+          <div class="msp-header">
+            <span class="msp-title">Control del mapa</span>
+            <button type="button" id="msp-collapse" class="msp-collapse" title="Minimizar panel" aria-label="Minimizar">−</button>
+          </div>
+          <div class="side-panel-tabs">
+            <button type="button" class="side-tab active" data-panel="capas">
+              <span class="tab-ico" aria-hidden="true">🗂️</span> Capas
+            </button>
+            <button type="button" class="side-tab" data-panel="tools">
+              <span class="tab-ico" aria-hidden="true">🛠️</span> Herramientas
+            </button>
+          </div>
+          <div id="panel-capas" class="side-panel-body active">
+            <div class="layer-group">
+              <div class="layer-group-title">Mapa base</div>
+              <div class="basemap-switch" id="basemap-switch" role="group" aria-label="Tipo de mapa de fondo">
+                <button type="button" class="basemap-btn active" data-basemap="satellite" title="Imagen satelital">
+                  <span class="bm-icon" aria-hidden="true">🛰️</span>
+                  <span class="bm-label">Satélite</span>
+                </button>
+                <button type="button" class="basemap-btn" data-basemap="streets" title="Mapa callejero estilo Google Maps">
+                  <span class="bm-icon" aria-hidden="true">🗺️</span>
+                  <span class="bm-label">Calles</span>
+                </button>
+                <button type="button" class="basemap-btn" data-basemap="hybrid" title="Satélite con calles y nombres">
+                  <span class="bm-icon" aria-hidden="true">🌍</span>
+                  <span class="bm-label">Híbrido</span>
+                </button>
+              </div>
+            </div>
+            <div class="layer-group">
+              <div class="layer-group-title">Territorio</div>
+              <div class="layer-grid">
+                <button type="button" class="layer-chip on" data-toggle="toggleBarrios" data-color="#ff5050" style="--lc:#ff5050"><span class="lc-swatch"></span><span class="lc-icon">▣</span><span class="lc-name">Barrios</span></button>
+                <button type="button" class="layer-chip" data-toggle="toggleSubBarrios" data-color="#2ecc71" style="--lc:#2ecc71"><span class="lc-swatch"></span><span class="lc-icon">📍</span><span class="lc-name">Sub-barrios</span></button>
+                <button type="button" class="layer-chip on" data-toggle="togglePredios" data-color="#888" style="--lc:#888"><span class="lc-swatch"></span><span class="lc-icon">▦</span><span class="lc-name">Predios</span></button>
+              </div>
+            </div>
+            <div class="layer-group">
+              <div class="layer-group-title">Movilidad</div>
+              <div class="layer-grid">
+                <button type="button" class="layer-chip on" data-toggle="toggleEstacionesMetro" data-color="#ff8800" style="--lc:#ff8800"><span class="lc-swatch"></span><span class="lc-icon">🚇</span><span class="lc-name">Metro</span></button>
+                <button type="button" class="layer-chip on" data-toggle="toggleVias" data-color="#e056fd" style="--lc:#e056fd"><span class="lc-swatch"></span><span class="lc-icon">🛣️</span><span class="lc-name">Vías</span></button>
+                <button type="button" class="layer-chip on" data-toggle="toggleTroncales" data-color="#9900cc" style="--lc:#9900cc"><span class="lc-swatch"></span><span class="lc-icon">🛤️</span><span class="lc-name">Troncales</span></button>
+              </div>
+            </div>
+            <div class="layer-group">
+              <div class="layer-group-title">Ambiente</div>
+              <div class="layer-grid">
+                <button type="button" class="layer-chip on" data-toggle="toggleParques" data-color="#2ecc71" style="--lc:#2ecc71"><span class="lc-swatch"></span><span class="lc-icon">🌳</span><span class="lc-name">Parques</span></button>
+                <button type="button" class="layer-chip on" data-toggle="toggleAreasProtegidas" data-color="#008080" style="--lc:#008080"><span class="lc-swatch"></span><span class="lc-icon">🛡️</span><span class="lc-name">SINAP</span></button>
+                <button type="button" class="layer-chip on" data-toggle="toggleRios" data-color="#3498db" style="--lc:#3498db"><span class="lc-swatch"></span><span class="lc-icon">💧</span><span class="lc-name">Ríos</span></button>
+                <button type="button" class="layer-chip on" data-toggle="toggleZonasAmort" data-color="#ff9900" style="--lc:#ff9900"><span class="lc-swatch"></span><span class="lc-icon">⚠️</span><span class="lc-name">Z. Amort.</span></button>
+                <button type="button" class="layer-chip on" data-toggle="toggleDrenajes" data-color="#3498db" style="--lc:#3498db"><span class="lc-swatch"></span><span class="lc-icon">🌊</span><span class="lc-name">Drenajes</span></button>
+              </div>
+            </div>
+            <!-- checkboxes ocultos — bindToggles los usa -->
+            <input type="checkbox" id="toggleBarrios" checked class="sr-only" aria-hidden="true">
+            <input type="checkbox" id="toggleSubBarrios" class="sr-only" aria-hidden="true">
+            <input type="checkbox" id="togglePredios" checked class="sr-only" aria-hidden="true">
+            <input type="checkbox" id="toggleEstacionesMetro" checked class="sr-only" aria-hidden="true">
+            <input type="checkbox" id="toggleParques" checked class="sr-only" aria-hidden="true">
+            <input type="checkbox" id="toggleAreasProtegidas" checked class="sr-only" aria-hidden="true">
+            <input type="checkbox" id="toggleRios" checked class="sr-only" aria-hidden="true">
+            <input type="checkbox" id="toggleZonasAmort" checked class="sr-only" aria-hidden="true">
+            <input type="checkbox" id="toggleVias" checked class="sr-only" aria-hidden="true">
+            <input type="checkbox" id="toggleDrenajes" checked class="sr-only" aria-hidden="true">
+            <input type="checkbox" id="toggleTroncales" checked class="sr-only" aria-hidden="true">
+          </div>
+          <div id="panel-tools" class="side-panel-body">
+            <button type="button" id="calcDistanceBtn" class="tool-action tool-distance">
+              <span class="ta-icon">📏</span>
+              <span class="ta-body"><strong>Distancias</strong><small>Parques, metro, ríos</small></span>
+            </button>
+            <button type="button" id="calcRouteBtn" class="tool-action tool-route">
+              <span class="ta-icon">🚗</span>
+              <span class="ta-body"><strong>Calcular ruta</strong><small>Hasta parque o metro</small></span>
+            </button>
+            <button type="button" id="measureBtn" class="tool-action tool-measure">
+              <span class="ta-icon">📐</span>
+              <span class="ta-body"><strong>Medir</strong><small>Distancia en el mapa</small></span>
+            </button>
+          </div>
+        </div>
+        <!-- browse selects sync con header (ocultos) -->
+        <select id="browse-barrio" class="sr-only" aria-hidden="true"><option value="">—</option></select>
+        <select id="browse-subbarrio" class="sr-only" aria-hidden="true"><option value="">—</option></select>
+        <div id="filter-subbarrio-wrap" class="sr-only"></div>
+
+        <!-- Lista de predios — panel lateral, no tapa el mapa -->
+        <div id="map-predios-panel" class="map-predios-panel hidden">
+          <div class="mpp-head">
+            <div>
+              <strong id="mpp-title">Predios en zona</strong>
+              <span id="mpp-subtitle" class="mpp-sub"></span>
+            </div>
+            <button type="button" id="mpp-close" class="mpp-close" aria-label="Cerrar">×</button>
+          </div>
+          <div id="map-predio-results" class="mpp-body"></div>
+        </div>
+
+        <div class="map-kpi-panel" id="map-kpi-panel">
+          <div id="map-kpi-context" class="map-kpi-context hidden">
+            <span class="ctx-pin" aria-hidden="true">📍</span>
+            <div class="ctx-text">
+              <span class="ctx-eyebrow">Zona activa</span>
+              <span id="map-kpi-context-label" class="ctx-name">Distrito Nacional</span>
+            </div>
+          </div>
+          <div class="kpi-card kpi-gold kpi-zone" data-kpi="predios">
+            <div class="kpi-icon">🏠</div>
+            <div class="kpi-label" id="lbl-kpi-predios">Predios</div>
+            <div class="kpi-value" id="kpi-predios">—</div>
+          </div>
+          <div class="kpi-card kpi-green kpi-zone" data-kpi="subbarrios">
+            <div class="kpi-icon">📍</div>
+            <div class="kpi-label" id="lbl-kpi-subbarrios">Sub-barrios</div>
+            <div class="kpi-value" id="kpi-subbarrios">—</div>
+          </div>
+          <div class="kpi-card kpi-blue kpi-territory" data-kpi="residencial">
+            <div class="kpi-icon">🏘️</div>
+            <div class="kpi-label" id="lbl-kpi-residencial">Residencial</div>
+            <div class="kpi-value" id="kpi-residencial">—</div>
+          </div>
+          <div class="kpi-card kpi-purple kpi-territory" data-kpi="comercial">
+            <div class="kpi-icon">🏪</div>
+            <div class="kpi-label" id="lbl-kpi-comercial">Comercial</div>
+            <div class="kpi-value" id="kpi-comercial">—</div>
+          </div>
+          <div class="kpi-card kpi-global kpi-blue" data-kpi="barrios">
+            <div class="kpi-icon">🗺️</div>
+            <div class="kpi-label">Barrios DN</div>
+            <div class="kpi-value" id="kpi-barrios">—</div>
+          </div>
+          <div class="kpi-card kpi-global kpi-red" data-kpi="manzanas">
+            <div class="kpi-icon">▦</div>
+            <div class="kpi-label">Manzanas</div>
+            <div class="kpi-value" id="kpi-manzanas">—</div>
+          </div>
+          <div class="kpi-card kpi-global kpi-teal" data-kpi="espacios">
+            <div class="kpi-icon">🌳</div>
+            <div class="kpi-label">Espacios</div>
+            <div class="kpi-value" id="kpi-espacios">—</div>
+          </div>
+          <div class="kpi-card kpi-global kpi-orange" data-kpi="zonas">
+            <div class="kpi-icon">⚠️</div>
+            <div class="kpi-label">Z. Informales</div>
+            <div class="kpi-value" id="kpi-zonas-inf">—</div>
+          </div>
+        </div>
+
+        <!-- Banda compacta — predio seleccionado -->
+        <div id="map-ficha-drawer" class="map-ficha-drawer hidden">
+          <div class="drawer-bar">
+            <div class="drawer-chips">
+              <div class="drawer-chip chip-gold">
+                <span class="chip-lbl">Ref.</span>
+                <span class="chip-val" id="drawer-catastro">—</span>
+              </div>
+              <div class="drawer-chip chip-blue">
+                <span class="chip-lbl">Barrio</span>
+                <span class="chip-val" id="drawer-barrio">—</span>
+              </div>
+              <div class="drawer-chip chip-green">
+                <span class="chip-lbl">Uso</span>
+                <span class="chip-val" id="drawer-uso">—</span>
+              </div>
+              <div class="drawer-chip chip-teal">
+                <span class="chip-lbl">Área</span>
+                <span class="chip-val" id="drawer-area">—</span>
+              </div>
+              <div class="drawer-chip chip-purple">
+                <span class="chip-lbl">Densidad</span>
+                <span class="chip-val" id="drawer-densidad">—</span>
+              </div>
+            </div>
+            <div class="drawer-actions">
+              <button type="button" id="drawer-full-ficha" class="drawer-btn-sm">Ficha 360° →</button>
+              <button type="button" id="drawer-close" class="drawer-close" aria-label="Cerrar">×</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ESPACIOS PÚBLICOS -->
+      <section id="view-espacios" class="view dashboard">
+        <div class="dashboard-page-head">
+          <h2 class="dashboard-title">🌳 Espacios Públicos — VERTEX RD</h2>
+        </div>
+        <div class="dash-kpi-grid">
+          <div class="dash-kpi kpi-purple"><div class="kpi-icon">⛲</div><div class="kpi-label" id="esp-lbl-parques">Parques y Plazas</div><div class="kpi-value" id="esp-kpi-parques">179</div></div>
+          <div class="dash-kpi kpi-blue"><div class="kpi-icon">🗺️</div><div class="kpi-label" id="esp-lbl-barrios">Barrios</div><div class="kpi-value" id="esp-kpi-barrios">70</div></div>
+          <div class="dash-kpi kpi-teal"><div class="kpi-icon">🌳</div><div class="kpi-label" id="esp-lbl-espacios">Espacios Abiertos</div><div class="kpi-value" id="esp-kpi-espacios">542</div></div>
+        </div>
+        <div class="filter-bar stats-filter-bar">
+          <label class="stats-filter-label" for="espacios-filter-barrio">Filtrar por barrio</label>
+          <select id="espacios-filter-barrio" class="stats-filter-select"><option value="">Distrito Nacional — Todos</option></select>
+          <span id="espacios-filter-badge" class="stats-filter-badge hidden"></span>
+        </div>
+        <div class="chart-grid">
+          <div class="chart-panel"><h3 id="chart-title-parques">Categoría Parques y Plazas</h3><canvas id="chart-parques"></canvas></div>
+          <div class="chart-panel"><h3 id="chart-title-espacios">Clasificación Espacios Abiertos</h3><canvas id="chart-espacios"></canvas></div>
+        </div>
+      </section>
+
+      <!-- FICHA PREDIAL -->
+      <section id="view-ficha" class="view dashboard">
+        <div class="ficha-page-head">
+          <h2 class="dashboard-title">📋 Ficha Predial 360°</h2>
+          <p class="ficha-subtitle">Busca por barrio + uso en el header o haz clic en el mapa</p>
+        </div>
+
+        <div class="ficha-hero-kpis">
+          <div class="ficha-kpi kpi-gold"><div class="kpi-icon">🏷️</div><div class="kpi-label">Referencia</div><div class="kpi-value" id="fp-codigo">—</div></div>
+          <div class="ficha-kpi kpi-blue"><div class="kpi-icon">📍</div><div class="kpi-label">Barrio</div><div class="kpi-value" id="fp-barrio">—</div></div>
+          <div class="ficha-kpi kpi-green"><div class="kpi-icon">🏗️</div><div class="kpi-label">Uso</div><div class="kpi-value" id="fp-uso">—</div></div>
+          <div class="ficha-kpi kpi-teal"><div class="kpi-icon">📐</div><div class="kpi-label">Área m²</div><div class="kpi-value" id="fp-area">—</div></div>
+          <div class="ficha-kpi kpi-purple"><div class="kpi-icon">📊</div><div class="kpi-label">Categoría</div><div class="kpi-value" id="fp-categoria">—</div></div>
+          <div class="ficha-kpi kpi-orange"><div class="kpi-icon">🏢</div><div class="kpi-label">Niveles máx.</div><div class="kpi-value" id="fp-niveles">—</div></div>
+        </div>
+
+        <div class="ficha-grid">
+          <div class="ficha-section">
+            <h3>Identificación</h3>
+            <div class="ficha-kpi-grid">
+              <div class="ficha-kpi kpi-blue sm"><div class="kpi-icon">🗺️</div><div class="kpi-label">Sub-barrio</div><div class="kpi-value" id="fp-subbarrio">—</div></div>
+              <div class="ficha-kpi kpi-red sm"><div class="kpi-icon">▦</div><div class="kpi-label">Polígono</div><div class="kpi-value" id="fp-poligono">—</div></div>
+              <div class="ficha-kpi kpi-gold sm"><div class="kpi-icon">🔖</div><div class="kpi-label">Catastro</div><div class="kpi-value small" id="fp-catastro-full">—</div></div>
+            </div>
+          </div>
+
+          <div class="ficha-section">
+            <h3>Uso y Estado</h3>
+            <div class="ficha-kpi-grid">
+              <div class="ficha-kpi kpi-green sm"><div class="kpi-icon">📋</div><div class="kpi-label">Estado</div><div class="kpi-value" id="fp-estado">—</div></div>
+              <div class="ficha-kpi kpi-teal sm"><div class="kpi-icon">⚙️</div><div class="kpi-label">Actividad</div><div class="kpi-value" id="fp-actividad">—</div></div>
+              <div class="ficha-kpi kpi-purple sm"><div class="kpi-icon">🏛️</div><div class="kpi-label">UT</div><div class="kpi-value" id="fp-ut">—</div></div>
+              <div class="ficha-kpi kpi-blue sm"><div class="kpi-icon">🏙️</div><div class="kpi-label">Nombre UT</div><div class="kpi-value" id="fp-nombre-ut">—</div></div>
+            </div>
+          </div>
+
+          <div class="ficha-section">
+            <h3>Densidades Netas (Hab/Ha)</h3>
+            <div class="ficha-kpi-grid cols-4">
+              <div class="ficha-kpi kpi-orange sm"><div class="kpi-icon">&lt;</div><div class="kpi-label">Solares &lt;300</div><div class="kpi-value" id="fp-solar-300">—</div></div>
+              <div class="ficha-kpi kpi-orange sm"><div class="kpi-icon">6-7</div><div class="kpi-label">301 m² vías 6-7</div><div class="kpi-value" id="fp-solar-301-6">—</div></div>
+              <div class="ficha-kpi kpi-orange sm"><div class="kpi-icon">7+</div><div class="kpi-label">301 m² vías 7+</div><div class="kpi-value" id="fp-solar-301-7">—</div></div>
+              <div class="ficha-kpi kpi-orange sm"><div class="kpi-icon">601</div><div class="kpi-label">601 m² vías 7+</div><div class="kpi-value" id="fp-solar-601">—</div></div>
+            </div>
+          </div>
+
+          <div class="ficha-section">
+            <h3>Marco Normativo</h3>
+            <div class="ficha-kpi-grid">
+              <div class="ficha-kpi kpi-purple sm wide-2"><div class="kpi-icon">✅</div><div class="kpi-label">Usos permitidos</div><div class="kpi-value" id="fp-usos-permitidos">—</div></div>
+              <div class="ficha-kpi kpi-gold sm"><div class="kpi-icon">📏</div><div class="kpi-label">Altura (m)</div><div class="kpi-value" id="fp-altura-m">—</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RETIROS Y LINDEROS -->
+      <section id="view-retiros" class="view dashboard">
+        <div class="dashboard-page-head">
+          <h2 class="dashboard-title">📐 Retiros y Linderos</h2>
+          <p class="dashboard-subtitle">Busca un predio en el header para cargar retiros según normativa</p>
+        </div>
+        <div class="ficha-grid">
+          <div class="ficha-section">
+            <h3>Especificaciones Técnicas</h3>
+            <div class="dash-kpi-grid cols-3">
+              <div class="dash-kpi kpi-purple"><div class="kpi-icon">📊</div><div class="kpi-label">Densidad</div><div class="kpi-value" id="ind-densidad">—</div></div>
+              <div class="dash-kpi kpi-orange"><div class="kpi-icon">🏢</div><div class="kpi-label">Rango Niveles</div><div class="kpi-value" id="ind-niveles">—</div></div>
+              <div class="dash-kpi kpi-teal"><div class="kpi-icon">📐</div><div class="kpi-label">Lote Mínimo m²</div><div class="kpi-value" id="ind-lote-min">—</div></div>
+            </div>
+          </div>
+          <div class="ficha-section">
+            <h3>Retiros (metros lineales)</h3>
+            <div class="dash-kpi-grid cols-4">
+              <div class="dash-kpi kpi-blue"><div class="kpi-icon">⬆️</div><div class="kpi-label">Frontal</div><div class="kpi-value" id="ind-ret-frontal">—</div></div>
+              <div class="dash-kpi kpi-green"><div class="kpi-icon">↔️</div><div class="kpi-label">Lateral</div><div class="kpi-value" id="ind-ret-lateral">—</div></div>
+              <div class="dash-kpi kpi-red"><div class="kpi-icon">⬇️</div><div class="kpi-label">Posterior</div><div class="kpi-value" id="ind-ret-posterior">—</div></div>
+              <div class="dash-kpi kpi-gold"><div class="kpi-icon">🏗️</div><div class="kpi-label">Entre Edificios</div><div class="kpi-value" id="ind-ret-edificios">—</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DENSIDADES RENACIMIENTO -->
+      <section id="view-densidades" class="view dashboard">
+        <div class="dashboard-page-head">
+          <h2 class="dashboard-title">🏗️ Renacimiento — Especificaciones</h2>
+          <p class="dashboard-subtitle">Parámetros urbanísticos del predio seleccionado</p>
+        </div>
+        <div class="ficha-grid">
+          <div class="ficha-section">
+            <h3>Parámetros Urbanísticos</h3>
+            <div class="dash-kpi-grid cols-3">
+              <div class="dash-kpi kpi-gold"><div class="kpi-icon">📈</div><div class="kpi-label">Edificabilidad %</div><div class="kpi-value" id="dr-edificabilidad">—</div></div>
+              <div class="dash-kpi kpi-blue"><div class="kpi-icon">🧱</div><div class="kpi-label">Ocupación %</div><div class="kpi-value" id="dr-ocupacion">—</div></div>
+              <div class="dash-kpi kpi-purple"><div class="kpi-icon">👥</div><div class="kpi-label">Densidad hab/ha</div><div class="kpi-value" id="dr-densidad">—</div></div>
+              <div class="dash-kpi kpi-orange"><div class="kpi-icon">🏢</div><div class="kpi-label">Niveles máx.</div><div class="kpi-value" id="dr-niveles">—</div></div>
+              <div class="dash-kpi kpi-teal"><div class="kpi-icon">📏</div><div class="kpi-label">Altura máx. m</div><div class="kpi-value" id="dr-altura">—</div></div>
+              <div class="dash-kpi kpi-green"><div class="kpi-icon">▦</div><div class="kpi-label">Rango área m²</div><div class="kpi-value" id="dr-rango-area">—</div></div>
+            </div>
+          </div>
+          <div class="ficha-section">
+            <h3>Retiros Renacimiento</h3>
+            <div class="dash-kpi-grid">
+              <div class="dash-kpi kpi-blue"><div class="kpi-icon">⬆️</div><div class="kpi-label">Frente m</div><div class="kpi-value" id="dr-ret-frente">—</div></div>
+              <div class="dash-kpi kpi-green"><div class="kpi-icon">↔️</div><div class="kpi-label">Laterales m</div><div class="kpi-value" id="dr-ret-lateral">—</div></div>
+              <div class="dash-kpi kpi-red"><div class="kpi-icon">⬇️</div><div class="kpi-label">Posterior m</div><div class="kpi-value" id="dr-ret-posterior">—</div></div>
+              <div class="dash-kpi kpi-gold wide-2"><div class="kpi-icon">📝</div><div class="kpi-label">Observaciones</div><div class="kpi-value" id="dr-obs">—</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ESTADÍSTICAS PREDIALES -->
+      <section id="view-estadisticas" class="view dashboard">
+        <div class="dashboard-page-head">
+          <h2 class="dashboard-title">📊 Estadísticas Prediales</h2>
+        </div>
+        <div class="dash-kpi-grid stats-kpi-grid">
+          <div class="dash-kpi kpi-blue"><div class="kpi-icon">🗺️</div><div class="kpi-label" id="stats-lbl-barrios">Barrios</div><div class="kpi-value" id="stats-kpi-barrios">70</div></div>
+          <div class="dash-kpi kpi-red"><div class="kpi-icon">▦</div><div class="kpi-label">Manzanas</div><div class="kpi-value" id="stats-kpi-manzanas">4,287</div></div>
+          <div class="dash-kpi kpi-gold"><div class="kpi-icon">🏠</div><div class="kpi-label">Predios</div><div class="kpi-value" id="stats-kpi-predios">140,237</div></div>
+          <div class="dash-kpi kpi-green stats-kpi-zone hidden" id="stats-kpi-subbarrios-wrap"><div class="kpi-icon">📍</div><div class="kpi-label">Sub-barrios</div><div class="kpi-value" id="stats-kpi-subbarrios">—</div></div>
+        </div>
+        <div class="filter-bar stats-filter-bar">
+          <label class="stats-filter-label" for="stats-filter-barrio">Filtrar por barrio</label>
+          <select id="stats-filter-barrio" class="stats-filter-select"><option value="">Distrito Nacional — Todos</option></select>
+          <span id="stats-filter-badge" class="stats-filter-badge hidden">Zona activa</span>
+        </div>
+        <div class="chart-grid">
+          <div class="chart-panel"><h3 id="chart-title-estrato">Predios por Estrato</h3><canvas id="chart-estrato"></canvas></div>
+          <div class="chart-panel"><h3 id="chart-title-caracteristica">Densidad de actividad</h3><canvas id="chart-caracteristica"></canvas></div>
+          <div class="chart-panel"><h3 id="chart-title-uso">Predios por Uso</h3><canvas id="chart-uso"></canvas></div>
+          <div class="chart-panel"><h3 id="chart-title-equipamiento">Predios por Equipamiento</h3><canvas id="chart-equipamiento"></canvas></div>
+        </div>
+        <div class="chart-panel modern-table-panel">
+          <h3>Ranking Barrios por Predios</h3>
+          <div class="modern-table-wrap">
+            <table class="modern-table">
+              <thead><tr><th>#</th><th>Barrio</th><th>Predios</th><th></th></tr></thead>
+              <tbody id="barrios-ranking-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- VÍAS -->
+      <section id="view-vias" class="view dashboard">
+        <div class="dashboard-page-head">
+          <h2 class="dashboard-title">🛣️ Análisis Vial</h2>
+          <p class="dashboard-subtitle">Red vial POT — capa <code>VIAS_POT</code> en Mapbox</p>
+        </div>
+        <div class="dash-kpi-grid vias-kpi-grid">
+          <div class="dash-kpi kpi-purple"><div class="kpi-icon">🛤️</div><div class="kpi-label" id="vias-lbl-count">Vías analizadas</div><div class="kpi-value" id="vias-total">—</div></div>
+          <div class="dash-kpi kpi-blue"><div class="kpi-icon">📐</div><div class="kpi-label">Total metros</div><div class="kpi-value" id="vias-metros">—</div></div>
+          <div class="dash-kpi kpi-teal"><div class="kpi-icon">📏</div><div class="kpi-label">Total kilómetros</div><div class="kpi-value" id="vias-km">—</div></div>
+        </div>
+        <div class="filter-bar stats-filter-bar">
+          <label class="stats-filter-label" for="vias-filter-barrio">Filtrar por barrio</label>
+          <select id="vias-filter-barrio" class="stats-filter-select"><option value="">Distrito Nacional — Todos (Top 15)</option></select>
+          <span id="vias-filter-badge" class="stats-filter-badge hidden"></span>
+        </div>
+        <div class="chart-panel modern-table-panel">
+          <h3 id="vias-table-title">Longitud por Barrio — Top 15</h3>
+          <div class="modern-table-wrap">
+            <table class="modern-table">
+              <thead><tr><th>#</th><th>Barrio</th><th>Metros</th><th>Kilómetros</th><th></th></tr></thead>
+              <tbody id="vias-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- MAPA SUBBARRIOS -->
+      <section id="view-subbarrios" class="view dashboard">
+        <div class="dashboard-page-head">
+          <h2 class="dashboard-title">🗺️ Sub-barrios — Todos los Distritos</h2>
+          <p class="dashboard-subtitle">253 polígonos GeoJSON con colores por distrito</p>
+        </div>
+        <div class="dash-kpi-grid">
+          <div class="dash-kpi kpi-gold"><div class="kpi-icon">🏠</div><div class="kpi-label">Predios</div><div class="kpi-value" id="sb-predios">140,237</div></div>
+          <div class="dash-kpi kpi-blue"><div class="kpi-icon">🗺️</div><div class="kpi-label">Barrios</div><div class="kpi-value">70</div></div>
+          <div class="dash-kpi kpi-green"><div class="kpi-icon">📍</div><div class="kpi-label">Sub-barrios</div><div class="kpi-value">253</div></div>
+        </div>
+        <div class="action-card">
+          <div class="action-card-icon">🗺️</div>
+          <div class="action-card-body">
+            <strong>Visualizar en el mapa</strong>
+            <p>Activa la capa Sub-barrios en Presentación para explorar polígonos por distrito nacional, SDE, SDO y SDN.</p>
+          </div>
+          <button type="button" class="action-card-btn" id="btn-activar-subbarrios">Abrir mapa →</button>
+        </div>
+      </section>
+
+      <!-- INDICADORES -->
+      <section id="view-indicadores" class="view dashboard">
+        <div class="dashboard-page-head">
+          <h2 class="dashboard-title">📈 Indicadores VERTEX RD</h2>
+          <p class="dashboard-subtitle">Ecosistema de datos geoespaciales y analíticos</p>
+        </div>
+        <div class="indicator-grid">
+          <div class="indicator-card kpi-blue"><div class="kpi-icon">🗂️</div><div class="ind-value">22</div><div class="ind-label">Capas geoespaciales</div><div class="ind-unit">capas integradas</div></div>
+          <div class="indicator-card kpi-gold"><div class="kpi-icon">🏠</div><div class="ind-value">140,237</div><div class="ind-label">Predios catastrales</div><div class="ind-unit">analizados</div></div>
+          <div class="indicator-card kpi-purple"><div class="kpi-icon">📊</div><div class="ind-value">9</div><div class="ind-label">Densidad urbanística</div><div class="ind-unit">tipologías</div></div>
+          <div class="indicator-card kpi-orange"><div class="kpi-icon">📐</div><div class="ind-value">5</div><div class="ind-label">Retiros y linderos</div><div class="ind-unit">rangos normativos</div></div>
+          <div class="indicator-card kpi-teal"><div class="kpi-icon">🛣️</div><div class="ind-value">1,496</div><div class="ind-label">Red vial</div><div class="ind-unit">km analizados</div></div>
+          <div class="indicator-card kpi-green"><div class="kpi-icon">🌳</div><div class="ind-value">721</div><div class="ind-label">Espacios públicos</div><div class="ind-unit">inventariados</div></div>
+          <div class="indicator-card kpi-blue"><div class="kpi-icon">🗺️</div><div class="ind-value">70</div><div class="ind-label">Barrios DN</div><div class="ind-unit">delimitados</div></div>
+          <div class="indicator-card kpi-green"><div class="kpi-icon">📍</div><div class="ind-value">245</div><div class="ind-label">Sub-barrios</div><div class="ind-unit">polígonos</div></div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+  <script src="https://unpkg.com/@turf/turf@6.5.0/turf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/api-client.js"></script>
+  <script src="js/map-core.js"></script>
+  <script src="js/ficha-predial.js"></script>
+  <script src="js/search-explorer.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

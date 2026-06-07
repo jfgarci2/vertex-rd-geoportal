@@ -1,0 +1,422 @@
+[
+  {
+    "barrio": "PALMA REAL",
+    "vias": 918,
+    "longitud_m": 59954.28,
+    "longitud_km": 59.954
+  },
+  {
+    "barrio": "ALTOS DE ARROYO HONDO",
+    "vias": 608,
+    "longitud_m": 59891.67,
+    "longitud_km": 59.892
+  },
+  {
+    "barrio": "LOS RIOS",
+    "vias": 660,
+    "longitud_m": 52180.01,
+    "longitud_km": 52.18
+  },
+  {
+    "barrio": "NUEVO ARROYO HONDO",
+    "vias": 624,
+    "longitud_m": 49119.74,
+    "longitud_km": 49.12
+  },
+  {
+    "barrio": "ARROYO MANZANO",
+    "vias": 356,
+    "longitud_m": 32137.17,
+    "longitud_km": 32.137
+  },
+  {
+    "barrio": "JARDINES DEL NORTE",
+    "vias": 284,
+    "longitud_m": 28792.42,
+    "longitud_km": 28.792
+  },
+  {
+    "barrio": "GAZCUE",
+    "vias": 293,
+    "longitud_m": 28323.49,
+    "longitud_km": 28.323
+  },
+  {
+    "barrio": "VIEJO ARROYO HONDO",
+    "vias": 347,
+    "longitud_m": 28273.94,
+    "longitud_km": 28.274
+  },
+  {
+    "barrio": "ENSANCHE NACO",
+    "vias": 220,
+    "longitud_m": 23141.07,
+    "longitud_km": 23.141
+  },
+  {
+    "barrio": "ENSANCHE LA FE",
+    "vias": 259,
+    "longitud_m": 23127.11,
+    "longitud_km": 23.127
+  },
+  {
+    "barrio": "LOS PRADOS",
+    "vias": 205,
+    "longitud_m": 22042.49,
+    "longitud_km": 22.042
+  },
+  {
+    "barrio": "BELLA VISTA",
+    "vias": 187,
+    "longitud_m": 21734.13,
+    "longitud_km": 21.734
+  },
+  {
+    "barrio": "CRISTO REY",
+    "vias": 268,
+    "longitud_m": 21454.1,
+    "longitud_km": 21.454
+  },
+  {
+    "barrio": "LOS RESTAURADORES",
+    "vias": 215,
+    "longitud_m": 20205.42,
+    "longitud_km": 20.205
+  },
+  {
+    "barrio": "CERROS DE ARROYO HONDO",
+    "vias": 207,
+    "longitud_m": 19992.76,
+    "longitud_km": 19.993
+  },
+  {
+    "barrio": "MIRAMAR",
+    "vias": 223,
+    "longitud_m": 19716.65,
+    "longitud_km": 19.717
+  },
+  {
+    "barrio": "DOMINGO SAVIO",
+    "vias": 337,
+    "longitud_m": 19295.83,
+    "longitud_km": 19.296
+  },
+  {
+    "barrio": "LOS PERALEJOS",
+    "vias": 237,
+    "longitud_m": 18748.16,
+    "longitud_km": 18.748
+  },
+  {
+    "barrio": "SAN GERONIMO",
+    "vias": 167,
+    "longitud_m": 18104.43,
+    "longitud_km": 18.104
+  },
+  {
+    "barrio": "MARIA AUXILIADORA",
+    "vias": 255,
+    "longitud_m": 17180.39,
+    "longitud_km": 17.18
+  },
+  {
+    "barrio": "BUENOS AIRES (INDEPENDENCIA)",
+    "vias": 156,
+    "longitud_m": 17024.45,
+    "longitud_km": 17.024
+  },
+  {
+    "barrio": "ENSANCHE LUPERON",
+    "vias": 181,
+    "longitud_m": 16780.12,
+    "longitud_km": 16.78
+  },
+  {
+    "barrio": "VILLA CONSUELO",
+    "vias": 219,
+    "longitud_m": 16559.47,
+    "longitud_km": 16.559
+  },
+  {
+    "barrio": "CIUDAD UNIVERSITARIA",
+    "vias": 154,
+    "longitud_m": 15941.51,
+    "longitud_km": 15.942
+  },
+  {
+    "barrio": "ENSANCHE QUISQUEYA",
+    "vias": 148,
+    "longitud_m": 15724.04,
+    "longitud_km": 15.724
+  },
+  {
+    "barrio": "LA ISABELA",
+    "vias": 172,
+    "longitud_m": 15579.81,
+    "longitud_km": 15.58
+  },
+  {
+    "barrio": "RENACIMIENTO",
+    "vias": 160,
+    "longitud_m": 15383.91,
+    "longitud_km": 15.384
+  },
+  {
+    "barrio": "EL MILLON",
+    "vias": 131,
+    "longitud_m": 15238.52,
+    "longitud_km": 15.239
+  },
+  {
+    "barrio": "LA AGUSTINA",
+    "vias": 198,
+    "longitud_m": 15128.93,
+    "longitud_km": 15.129
+  },
+  {
+    "barrio": "LOS CACICAZGOS",
+    "vias": 169,
+    "longitud_m": 14800.77,
+    "longitud_km": 14.801
+  },
+  {
+    "barrio": "CIUDAD COLONIAL",
+    "vias": 211,
+    "longitud_m": 14524.9,
+    "longitud_km": 14.525
+  },
+  {
+    "barrio": "PIANTINI",
+    "vias": 120,
+    "longitud_m": 13745.76,
+    "longitud_km": 13.746
+  },
+  {
+    "barrio": "HONDURAS DEL OESTE",
+    "vias": 141,
+    "longitud_m": 13525.54,
+    "longitud_km": 13.526
+  },
+  {
+    "barrio": "JULIETA MORALES",
+    "vias": 128,
+    "longitud_m": 13337.1,
+    "longitud_km": 13.337
+  },
+  {
+    "barrio": "CACIQUE",
+    "vias": 149,
+    "longitud_m": 12733.95,
+    "longitud_km": 12.734
+  },
+  {
+    "barrio": "HONDURAS DEL NORTE",
+    "vias": 126,
+    "longitud_m": 12567.18,
+    "longitud_km": 12.567
+  },
+  {
+    "barrio": "SIMON BOLIVAR",
+    "vias": 229,
+    "longitud_m": 12465.75,
+    "longitud_km": 12.466
+  },
+  {
+    "barrio": "LA ESPERILLA",
+    "vias": 103,
+    "longitud_m": 12421.98,
+    "longitud_km": 12.422
+  },
+  {
+    "barrio": "VILLA AGRICOLAS",
+    "vias": 129,
+    "longitud_m": 12156.01,
+    "longitud_km": 12.156
+  },
+  {
+    "barrio": "TROPICAL METALDOM",
+    "vias": 118,
+    "longitud_m": 11417.81,
+    "longitud_km": 11.418
+  },
+  {
+    "barrio": "JARDINES DEL SUR",
+    "vias": 137,
+    "longitud_m": 11164.01,
+    "longitud_km": 11.164
+  },
+  {
+    "barrio": "ENSANCHE CAPOTILLO",
+    "vias": 137,
+    "longitud_m": 11096.46,
+    "longitud_km": 11.096
+  },
+  {
+    "barrio": "MIRADOR NORTE",
+    "vias": 96,
+    "longitud_m": 10802.28,
+    "longitud_km": 10.802
+  },
+  {
+    "barrio": "VILLA JUANA",
+    "vias": 112,
+    "longitud_m": 10773.31,
+    "longitud_km": 10.773
+  },
+  {
+    "barrio": "GUALEY",
+    "vias": 229,
+    "longitud_m": 10489.67,
+    "longitud_km": 10.49
+  },
+  {
+    "barrio": "MIRADOR SUR",
+    "vias": 105,
+    "longitud_m": 10465.11,
+    "longitud_km": 10.465
+  },
+  {
+    "barrio": "ENSANCHE ESPAILLAT",
+    "vias": 104,
+    "longitud_m": 10378.13,
+    "longitud_km": 10.378
+  },
+  {
+    "barrio": "VILLA FRANCISCA",
+    "vias": 141,
+    "longitud_m": 10270.81,
+    "longitud_km": 10.271
+  },
+  {
+    "barrio": "LA JULIA",
+    "vias": 96,
+    "longitud_m": 9602.49,
+    "longitud_km": 9.602
+  },
+  {
+    "barrio": "GENERAL ANTONIO DUVERGE",
+    "vias": 128,
+    "longitud_m": 8730.25,
+    "longitud_km": 8.73
+  },
+  {
+    "barrio": "MEJORAMIENTO SOCIAL",
+    "vias": 95,
+    "longitud_m": 8442.48,
+    "longitud_km": 8.442
+  },
+  {
+    "barrio": "MATA HAMBRE",
+    "vias": 94,
+    "longitud_m": 7333.27,
+    "longitud_km": 7.333
+  },
+  {
+    "barrio": "SAN CARLOS",
+    "vias": 105,
+    "longitud_m": 7315.96,
+    "longitud_km": 7.316
+  },
+  {
+    "barrio": "ATALA",
+    "vias": 78,
+    "longitud_m": 7211.99,
+    "longitud_km": 7.212
+  },
+  {
+    "barrio": "PARAISO",
+    "vias": 53,
+    "longitud_m": 6772.19,
+    "longitud_km": 6.772
+  },
+  {
+    "barrio": "SAN JUAN BOSCO",
+    "vias": 87,
+    "longitud_m": 6538.69,
+    "longitud_km": 6.539
+  },
+  {
+    "barrio": "CENTRO DE LOS HEROES",
+    "vias": 64,
+    "longitud_m": 6453.58,
+    "longitud_km": 6.454
+  },
+  {
+    "barrio": "MIRAFLORES",
+    "vias": 68,
+    "longitud_m": 6404.66,
+    "longitud_km": 6.405
+  },
+  {
+    "barrio": "24 DE ABRIL",
+    "vias": 128,
+    "longitud_m": 6340.05,
+    "longitud_km": 6.34
+  },
+  {
+    "barrio": "PUERTO ISABELA",
+    "vias": 65,
+    "longitud_m": 5121.09,
+    "longitud_km": 5.121
+  },
+  {
+    "barrio": "LA ZURZA",
+    "vias": 44,
+    "longitud_m": 4472.02,
+    "longitud_km": 4.472
+  },
+  {
+    "barrio": "30 DE MAYO",
+    "vias": 38,
+    "longitud_m": 4467.0,
+    "longitud_km": 4.467
+  },
+  {
+    "barrio": "NUESTRA SEÑORA DE LA PAZ",
+    "vias": 48,
+    "longitud_m": 4236.72,
+    "longitud_km": 4.237
+  },
+  {
+    "barrio": "CIUDAD NUEVA",
+    "vias": 48,
+    "longitud_m": 3366.55,
+    "longitud_km": 3.367
+  },
+  {
+    "barrio": "PARQUE MIRADOR SUR",
+    "vias": 34,
+    "longitud_m": 2624.11,
+    "longitud_km": 2.624
+  },
+  {
+    "barrio": "LA HONDONADA",
+    "vias": 23,
+    "longitud_m": 2484.97,
+    "longitud_km": 2.485
+  },
+  {
+    "barrio": "JARDIN BOTANICO",
+    "vias": 4,
+    "longitud_m": 2441.64,
+    "longitud_km": 2.442
+  },
+  {
+    "barrio": "CENTRO OLIMPICO",
+    "vias": 16,
+    "longitud_m": 1885.49,
+    "longitud_km": 1.885
+  },
+  {
+    "barrio": "JARDIN ZOOLOGICO",
+    "vias": 8,
+    "longitud_m": 1439.86,
+    "longitud_km": 1.44
+  },
+  {
+    "barrio": "SAN DIEGO",
+    "vias": 2,
+    "longitud_m": 919.71,
+    "longitud_km": 0.92
+  }
+]

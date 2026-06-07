@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>VERTEX RD — Informe de Portafolio</title>
+  <style>
+    @page { margin: 2cm; }
+    body { font-family: 'Segoe UI', Georgia, serif; max-width: 800px; margin: 0 auto; padding: 2rem; color: #1a1a1a; line-height: 1.6; }
+    h1 { color: #1e2130; border-bottom: 3px solid #c9a84c; padding-bottom: 0.5rem; }
+    h2 { color: #2a2d3a; margin-top: 2rem; }
+    .meta { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
+    .highlight { background: #f8f4e8; border-left: 4px solid #c9a84c; padding: 1rem; margin: 1rem 0; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+    th, td { border: 1px solid #ddd; padding: 0.5rem; text-align: left; }
+    th { background: #1e2130; color: #fff; }
+    .badge { display: inline-block; background: #1e2130; color: #c9a84c; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; margin: 0.2rem; }
+    .links a { color: #2563eb; }
+    @media print { body { padding: 0; } .no-print { display: none; } }
+  </style>
+</head>
+<body>
+  <p class="no-print" style="background:#fff3cd;padding:0.75rem;border-radius:6px;">
+    <strong>Para guardar PDF:</strong> Ctrl+P → "Guardar como PDF"
+  </p>
+
+  <h1>VERTEX RD — Geoportal Catastral 360°</h1>
+  <p class="meta">
+    <strong>Autor:</strong> José Fernando García Pérez<br>
+    <strong>Rol:</strong> Senior Geospatial Data Engineer & Analytics Engineer<br>
+    <strong>Ubicación:</strong> República Dominicana / Colombia<br>
+    <strong>Fecha:</strong> Junio 2026
+  </p>
+
+  <div class="highlight">
+    <strong>Resumen ejecutivo:</strong> Plataforma web que integra 140,237 predios catastrales del Distrito Nacional con 22 capas GIS, normativa urbanística (densidades y retiros), y tableros analíticos — evolución de un dashboard Power BI y un mapa Mapbox GL JS a un geoportal profesional publicable.
+  </div>
+
+  <h2>1. Problema de negocio</h2>
+  <p>La planificación urbana del Distrito Nacional requiere consultar simultáneamente: límites catastrales, usos de suelo, restricciones normativas (altura, densidad, retiros), infraestructura vial y espacios públicos. Esta información existía dispersa en shapefiles ArcGIS, tablas Excel y un dashboard Power BI sin acceso web público.</p>
+
+  <h2>2. Solución implementada</h2>
+  <ul>
+    <li><strong>Geoportal web</strong> con Mapbox GL JS v3.10 (10 tilesets vectoriales)</li>
+    <li><strong>Ficha Predial 360°</strong> con búsqueda por código catastro</li>
+    <li><strong>9 módulos analíticos</strong> replicando las pestañas de Power BI</li>
+    <li><strong>Herramientas GIS</strong>: mediciones Turf.js, distancias, rutas Directions API</li>
+    <li><strong>Pipeline de datos</strong>: Excel → JSON para tablas normativas</li>
+  </ul>
+
+  <h2>3. Métricas del proyecto</h2>
+  <table>
+    <tr><th>Métrica</th><th>Valor</th></tr>
+    <tr><td>Predios analizados</td><td>140,237</td></tr>
+    <tr><td>Capas geoespaciales</td><td>22 shapefiles</td></tr>
+    <tr><td>Tilesets Mapbox</td><td>10 publicados</td></tr>
+    <tr><td>Barrios</td><td>70</td></tr>
+    <tr><td>Sub-barrios</td><td>245</td></tr>
+    <tr><td>Vías analizadas</td><td>12,429 (1,496 km)</td></tr>
+    <tr><td>Tipologías de densidad</td><td>9 (BM → AI)</td></tr>
+    <tr><td>Reglas de retiros</td><td>5 rangos (R1 → R3)</td></tr>
+    <tr><td>Espacios públicos</td><td>721 (542 abiertos + 179 parques)</td></tr>
+  </table>
+
+  <h2>4. Stack tecnológico</h2>
+  <p>
+    <span class="badge">Mapbox GL JS 3.10</span>
+    <span class="badge">Turf.js 6.5</span>
+    <span class="badge">Chart.js 4.4</span>
+    <span class="badge">Power BI</span>
+    <span class="badge">ArcGIS 10.8</span>
+    <span class="badge">PostGIS</span>
+    <span class="badge">Python/pandas</span>
+    <span class="badge">GitHub Pages</span>
+  </p>
+
+  <h2>5. Arquitectura de datos</h2>
+  <pre style="background:#f4f4f4;padding:1rem;font-size:0.8rem;overflow-x:auto;">
+Shapefiles (WGS84) → Mapbox Tilesets → Mapbox GL JS (capas vectoriales)
+Excel (PREDIOS, Densidades, Retiros) → Python export → JSON → Ficha Predial JS
+Power BI (VERTEX_DN_RD_V3) → KPIs + diseño UI → Dashboard web Chart.js
+  </pre>
+
+  <h2>6. Competencias demostradas</h2>
+  <table>
+    <tr><th>Competencia</th><th>Evidencia</th></tr>
+    <tr><td>GIS / Geospatial Engineering</td><td>22 capas, popups, mediciones, rutas, tilesets</td></tr>
+    <tr><td>Analytics Engineering</td><td>Cruce predio↔densidad↔retiros, KPIs, gráficos</td></tr>
+    <tr><td>Data Engineering</td><td>Pipeline Excel→JSON, modelo relacional por IDs</td></tr>
+    <tr><td>Urban Planning / Catastro</td><td>Ficha Predial, Renacimiento, POT, retiros</td></tr>
+    <tr><td>Frontend / UX</td><td>UI oscura profesional, 9 vistas, responsive</td></tr>
+    <tr><td>Documentación</td><td>README, manual educativo, informe reclutador</td></tr>
+  </table>
+
+  <h2>7. Enlaces del proyecto</h2>
+  <div class="links">
+    <ul>
+      <li><strong>Demo geoportal:</strong> <a href="https://jfgarci2.github.io/vertex-rd-geoportal/">jfgarci2.github.io/vertex-rd-geoportal</a></li>
+      <li><strong>Repositorio:</strong> <a href="https://github.com/jfgarci2/vertex-rd-geoportal">github.com/jfgarci2/vertex-rd-geoportal</a></li>
+      <li><strong>Portafolio personal:</strong> <a href="https://jfgarcia-portfolio.vercel.app/es">jfgarcia-portfolio.vercel.app</a></li>
+      <li><strong>Proyecto relacionado (Medellín):</strong> <a href="https://jfgarci2.github.io/medellin-cadastral-analytics/">medellin-cadastral-analytics</a></li>
+      <li><strong>Proyecto relacionado (AMVA):</strong> <a href="https://dashboard-lake-eight-41.vercel.app">dashboard-lake-eight-41.vercel.app</a></li>
+    </ul>
+  </div>
+
+  <h2>8. Diferenciador para mercado internacional</h2>
+  <p>La mayoría de candidatos presentan <em>o</em> mapas <em>o</em> dashboards. Este proyecto demuestra la integración end-to-end: <strong>datos geoespaciales + normativa urbana + visualización ejecutiva + aplicación web publicable</strong>, con documentación educativa que permite a un equipo técnico evaluar y replicar el trabajo.</p>
+
+  <h2>9. Contacto</h2>
+  <p>
+    <strong>José Fernando García Pérez</strong><br>
+    GitHub: <a href="https://github.com/jfgarci2">github.com/jfgarci2</a><br>
+    Portfolio: <a href="https://jfgarcia-portfolio.vercel.app/es">jfgarcia-portfolio.vercel.app</a>
+  </p>
+</body>
+</html>

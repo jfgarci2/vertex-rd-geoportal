@@ -1,0 +1,34 @@
+# Datos pesados (permanecen en VERTEXRD local)
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.sbn
+*.sbx
+*.gdb/
+*.gpkg
+*.mpk
+*.pbix
+
+# Excel fuente (regenerar JSON con scripts/export_data.py)
+*.xlsx
+*.xls
+
+# SQLite 140K predios (regenerar: python scripts/export_predios_full.py)
+data/predios.db
+
+# Secrets — never commit
+.env
+js/config.local.js
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,577 @@
+{
+  "kpis": {
+    "predios": 140237,
+    "barrios": 70,
+    "manzanas": 4287,
+    "sub_barrios": 245,
+    "espacios_abiertos": 542,
+    "zonas_informales": 824,
+    "parques_plazas": 179,
+    "vias": 12429,
+    "longitud_vias_km": 1496
+  },
+  "estrato": [
+    {
+      "estrato": 0,
+      "cantidad": 23175
+    },
+    {
+      "estrato": 1,
+      "cantidad": 22620
+    },
+    {
+      "estrato": 2,
+      "cantidad": 29609
+    },
+    {
+      "estrato": 3,
+      "cantidad": 36415
+    },
+    {
+      "estrato": 4,
+      "cantidad": 14338
+    },
+    {
+      "estrato": 5,
+      "cantidad": 14080
+    }
+  ],
+  "uso": [
+    {
+      "uso": "Residencial",
+      "cantidad": 102394
+    },
+    {
+      "uso": "Comercial",
+      "cantidad": 19585
+    },
+    {
+      "uso": "Res. y Com.",
+      "cantidad": 14650
+    },
+    {
+      "uso": "Solares",
+      "cantidad": 2499
+    },
+    {
+      "uso": "Oficial",
+      "cantidad": 820
+    },
+    {
+      "uso": "Industrial",
+      "cantidad": 123
+    },
+    {
+      "uso": "Mixto Residencial",
+      "cantidad": 52
+    },
+    {
+      "uso": "Residencial Especial",
+      "cantidad": 52
+    },
+    {
+      "uso": "",
+      "cantidad": 31
+    },
+    {
+      "uso": "Sin Fin de Lucro",
+      "cantidad": 26
+    },
+    {
+      "uso": "ESPARCIMIENTO",
+      "cantidad": 3
+    },
+    {
+      "uso": "sin definir",
+      "cantidad": 1
+    }
+  ],
+  "caracteristica": [],
+  "equipamiento": [
+    {
+      "equipamiento": "Residencial",
+      "cantidad": 102447
+    },
+    {
+      "equipamiento": "Comercial",
+      "cantidad": 18441
+    },
+    {
+      "equipamiento": "Mixto",
+      "cantidad": 14729
+    },
+    {
+      "equipamiento": "Solares",
+      "cantidad": 2475
+    },
+    {
+      "equipamiento": "Equipamiento",
+      "cantidad": 1414
+    },
+    {
+      "equipamiento": "Institucional",
+      "cantidad": 514
+    },
+    {
+      "equipamiento": "Industrial",
+      "cantidad": 130
+    },
+    {
+      "equipamiento": "Area verde",
+      "cantidad": 38
+    },
+    {
+      "equipamiento": "Sin definir",
+      "cantidad": 31
+    },
+    {
+      "equipamiento": "Sin clasificar",
+      "cantidad": 17
+    }
+  ],
+  "parques_categoria": [
+    {
+      "categoria": "PARQUES",
+      "cantidad": 102
+    },
+    {
+      "categoria": "PLAZAS",
+      "cantidad": 36
+    },
+    {
+      "categoria": " ",
+      "cantidad": 17
+    },
+    {
+      "categoria": "AREAS VERDES",
+      "cantidad": 11
+    },
+    {
+      "categoria": "PLAZOLETAS",
+      "cantidad": 7
+    },
+    {
+      "categoria": "PARQUE",
+      "cantidad": 3
+    },
+    {
+      "categoria": "ROTONDAS",
+      "cantidad": 1
+    },
+    {
+      "categoria": "BULEVAR",
+      "cantidad": 1
+    },
+    {
+      "categoria": "CLUB",
+      "cantidad": 1
+    }
+  ],
+  "espacios_clasificacion": [
+    {
+      "clasificacion": "PARQUES DEPORTIVOS, CAMPOS Y CLUBES DEPORTIVOS",
+      "cantidad": 146
+    },
+    {
+      "clasificacion": "PLAZAS Y PASEOS",
+      "cantidad": 92
+    },
+    {
+      "clasificacion": "PARQUES VECINALES",
+      "cantidad": 81
+    },
+    {
+      "clasificacion": "PARQUES INFANTILES Y DE BOLSILLO",
+      "cantidad": 55
+    },
+    {
+      "clasificacion": "PARQUES METROPOLITANOS, REGIONALES Y ESPECIALIZADOS",
+      "cantidad": 52
+    },
+    {
+      "clasificacion": "ZONA PROTECTORA",
+      "cantidad": 49
+    },
+    {
+      "clasificacion": "ÁREAS VERDES LIBRES",
+      "cantidad": 28
+    },
+    {
+      "clasificacion": "PARQUES URBANOS Y SECTORIALES",
+      "cantidad": 22
+    },
+    {
+      "clasificacion": "ESCENARIOS PATRIMONIALES (HISTÓRICOS Y CONMEMORATIVOS",
+      "cantidad": 9
+    },
+    {
+      "clasificacion": "ÁREAS NATURALES",
+      "cantidad": 3
+    }
+  ],
+  "vias_por_barrio": [],
+  "barrios": [
+    {
+      "DESCRIPCIO": "HONDURAS DEL OESTE",
+      "COD_BARRIO": 7
+    },
+    {
+      "DESCRIPCIO": "MIRAMAR",
+      "COD_BARRIO": 26
+    },
+    {
+      "DESCRIPCIO": "TROPICAL METALDOM",
+      "COD_BARRIO": 27
+    },
+    {
+      "DESCRIPCIO": "30 DE MAYO",
+      "COD_BARRIO": 36
+    },
+    {
+      "DESCRIPCIO": "CACIQUE",
+      "COD_BARRIO": 37
+    },
+    {
+      "DESCRIPCIO": "MATA HAMBRE",
+      "COD_BARRIO": 39
+    },
+    {
+      "DESCRIPCIO": "CENTRO DE LOS HEROES",
+      "COD_BARRIO": 38
+    },
+    {
+      "DESCRIPCIO": "NUESTRA SEÑORA DE LA PAZ",
+      "COD_BARRIO": 34
+    },
+    {
+      "DESCRIPCIO": "GENERAL ANTONIO DUVERGE",
+      "COD_BARRIO": 35
+    },
+    {
+      "DESCRIPCIO": "ATALA",
+      "COD_BARRIO": 29
+    },
+    {
+      "DESCRIPCIO": "JARDINES DEL SUR",
+      "COD_BARRIO": 28
+    },
+    {
+      "DESCRIPCIO": "HONDURAS DEL NORTE",
+      "COD_BARRIO": 8
+    },
+    {
+      "DESCRIPCIO": "LA ESPERILLA",
+      "COD_BARRIO": 41
+    },
+    {
+      "DESCRIPCIO": "LA JULIA",
+      "COD_BARRIO": 33
+    },
+    {
+      "DESCRIPCIO": "GAZCUE",
+      "COD_BARRIO": 53
+    },
+    {
+      "DESCRIPCIO": "CIUDAD COLONIAL",
+      "COD_BARRIO": 65
+    },
+    {
+      "DESCRIPCIO": "SAN JUAN BOSCO",
+      "COD_BARRIO": 52
+    },
+    {
+      "DESCRIPCIO": "SAN CARLOS",
+      "COD_BARRIO": 55
+    },
+    {
+      "DESCRIPCIO": "LOS CACICAZGOS",
+      "COD_BARRIO": 10
+    },
+    {
+      "DESCRIPCIO": "RENACIMIENTO",
+      "COD_BARRIO": 11
+    },
+    {
+      "DESCRIPCIO": "MIRADOR NORTE",
+      "COD_BARRIO": 23
+    },
+    {
+      "DESCRIPCIO": "BELLA VISTA",
+      "COD_BARRIO": 30
+    },
+    {
+      "DESCRIPCIO": "MIRADOR SUR",
+      "COD_BARRIO": 24
+    },
+    {
+      "DESCRIPCIO": "MIRAFLORES",
+      "COD_BARRIO": 51
+    },
+    {
+      "DESCRIPCIO": "CENTRO OLIMPICO",
+      "COD_BARRIO": 43
+    },
+    {
+      "DESCRIPCIO": "ENSANCHE NACO",
+      "COD_BARRIO": 42
+    },
+    {
+      "DESCRIPCIO": "PARAISO",
+      "COD_BARRIO": 19
+    },
+    {
+      "DESCRIPCIO": "PIANTINI",
+      "COD_BARRIO": 32
+    },
+    {
+      "DESCRIPCIO": "LOS RESTAURADORES",
+      "COD_BARRIO": 12
+    },
+    {
+      "DESCRIPCIO": "ENSANCHE QUISQUEYA",
+      "COD_BARRIO": 31
+    },
+    {
+      "DESCRIPCIO": "EL MILLON",
+      "COD_BARRIO": 22
+    },
+    {
+      "DESCRIPCIO": "LOS PRADOS",
+      "COD_BARRIO": 21
+    },
+    {
+      "DESCRIPCIO": "JULIETA MORALES",
+      "COD_BARRIO": 20
+    },
+    {
+      "DESCRIPCIO": "VILLA FRANCISCA",
+      "COD_BARRIO": 64
+    },
+    {
+      "DESCRIPCIO": "VILLA CONSUELO",
+      "COD_BARRIO": 56
+    },
+    {
+      "DESCRIPCIO": "DOMINGO SAVIO",
+      "COD_BARRIO": 66
+    },
+    {
+      "DESCRIPCIO": "MARIA AUXILIADORA",
+      "COD_BARRIO": 62
+    },
+    {
+      "DESCRIPCIO": "VILLA JUANA",
+      "COD_BARRIO": 50
+    },
+    {
+      "DESCRIPCIO": "VILLA AGRICOLAS",
+      "COD_BARRIO": 49
+    },
+    {
+      "DESCRIPCIO": "ENSANCHE LUPERON",
+      "COD_BARRIO": 57
+    },
+    {
+      "DESCRIPCIO": "ENSANCHE ESPAILLAT",
+      "COD_BARRIO": 61
+    },
+    {
+      "DESCRIPCIO": "LA ZURZA",
+      "COD_BARRIO": 48
+    },
+    {
+      "DESCRIPCIO": "ENSANCHE CAPOTILLO",
+      "COD_BARRIO": 58
+    },
+    {
+      "DESCRIPCIO": "SIMON BOLIVAR",
+      "COD_BARRIO": 59
+    },
+    {
+      "DESCRIPCIO": "GUALEY",
+      "COD_BARRIO": 67
+    },
+    {
+      "DESCRIPCIO": "24 DE ABRIL",
+      "COD_BARRIO": 60
+    },
+    {
+      "DESCRIPCIO": "LOS PERALEJOS",
+      "COD_BARRIO": 1
+    },
+    {
+      "DESCRIPCIO": "LA ISABELA",
+      "COD_BARRIO": 68
+    },
+    {
+      "DESCRIPCIO": "LA HONDONADA",
+      "COD_BARRIO": 69
+    },
+    {
+      "DESCRIPCIO": "SAN DIEGO",
+      "COD_BARRIO": 70
+    },
+    {
+      "DESCRIPCIO": "ENSANCHE LA FE",
+      "COD_BARRIO": 44
+    },
+    {
+      "DESCRIPCIO": "LA AGUSTINA",
+      "COD_BARRIO": 45
+    },
+    {
+      "DESCRIPCIO": "PUERTO ISABELA",
+      "COD_BARRIO": 6
+    },
+    {
+      "DESCRIPCIO": "JARDIN ZOOLOGICO",
+      "COD_BARRIO": 47
+    },
+    {
+      "DESCRIPCIO": "CERROS DE ARROYO HONDO",
+      "COD_BARRIO": 17
+    },
+    {
+      "DESCRIPCIO": "CRISTO REY",
+      "COD_BARRIO": 46
+    },
+    {
+      "DESCRIPCIO": "CIUDAD NUEVA",
+      "COD_BARRIO": 54
+    },
+    {
+      "DESCRIPCIO": "SAN GERONIMO",
+      "COD_BARRIO": 13
+    },
+    {
+      "DESCRIPCIO": "BUENOS AIRES (INDEPENDENCIA)",
+      "COD_BARRIO": 25
+    },
+    {
+      "DESCRIPCIO": "LOS RIOS",
+      "COD_BARRIO": 5
+    },
+    {
+      "DESCRIPCIO": "NUEVO ARROYO HONDO",
+      "COD_BARRIO": 16
+    },
+    {
+      "DESCRIPCIO": "JARDINES DEL NORTE",
+      "COD_BARRIO": 14
+    },
+    {
+      "DESCRIPCIO": "VIEJO ARROYO HONDO",
+      "COD_BARRIO": 18
+    },
+    {
+      "DESCRIPCIO": "ARROYO MANZANO",
+      "COD_BARRIO": 3
+    },
+    {
+      "DESCRIPCIO": "PALMA REAL",
+      "COD_BARRIO": 2
+    },
+    {
+      "DESCRIPCIO": "JARDIN BOTANICO",
+      "COD_BARRIO": 15
+    },
+    {
+      "DESCRIPCIO": "MEJORAMIENTO SOCIAL",
+      "COD_BARRIO": 63
+    },
+    {
+      "DESCRIPCIO": "PARQUE MIRADOR SUR",
+      "COD_BARRIO": 9
+    },
+    {
+      "DESCRIPCIO": "CIUDAD UNIVERSITARIA",
+      "COD_BARRIO": 40
+    },
+    {
+      "DESCRIPCIO": "ALTOS DE ARROYO HONDO",
+      "COD_BARRIO": 4
+    }
+  ],
+  "barrios_ranking": [
+    {
+      "BARRIO_": "PALMA REAL",
+      "predios": 6736
+    },
+    {
+      "BARRIO_": "LOS RIOS",
+      "predios": 5813
+    },
+    {
+      "BARRIO_": "VILLA CONSUELO",
+      "predios": 5624
+    },
+    {
+      "BARRIO_": "ALTOS DE ARROYO HONDO",
+      "predios": 5249
+    },
+    {
+      "BARRIO_": "CRISTO REY",
+      "predios": 4632
+    },
+    {
+      "BARRIO_": "ENSANCHE CAPOTILLO",
+      "predios": 4615
+    },
+    {
+      "BARRIO_": "VILLA JUANA",
+      "predios": 4172
+    },
+    {
+      "BARRIO_": "MARIA AUXILIADORA",
+      "predios": 4006
+    },
+    {
+      "BARRIO_": "NUEVO ARROYO HONDO",
+      "predios": 3731
+    },
+    {
+      "BARRIO_": "VILLA AGRICOLAS",
+      "predios": 3721
+    },
+    {
+      "BARRIO_": "MEJORAMIENTO SOCIAL",
+      "predios": 3617
+    },
+    {
+      "BARRIO_": "CIUDAD COLONIAL",
+      "predios": 3579
+    },
+    {
+      "BARRIO_": "BUENOS AIRES (INDEPENDENCIA)",
+      "predios": 3536
+    },
+    {
+      "BARRIO_": "VILLA FRANCISCA",
+      "predios": 3339
+    },
+    {
+      "BARRIO_": "GAZCUE",
+      "predios": 3307
+    },
+    {
+      "BARRIO_": "ENSANCHE LA FE",
+      "predios": 3121
+    },
+    {
+      "BARRIO_": "ENSANCHE QUISQUEYA",
+      "predios": 3070
+    },
+    {
+      "BARRIO_": "JARDINES DEL NORTE",
+      "predios": 2870
+    },
+    {
+      "BARRIO_": "ENSANCHE ESPAILLAT",
+      "predios": 2800
+    },
+    {
+      "BARRIO_": "VIEJO ARROYO HONDO",
+      "predios": 2461
+    }
+  ]
+}

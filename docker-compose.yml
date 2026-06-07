@@ -1,0 +1,34 @@
+services:
+  postgis:
+    image: postgis/postgis:16-3.4
+    container_name: vertex-postgis
+    environment:
+      POSTGRES_DB: vertex_rd
+      POSTGRES_USER: vertex
+      POSTGRES_PASSWORD: vertex123
+    ports:
+      - "5432:5432"
+    volumes:
+      - vertex_pgdata:/var/lib/postgresql/data
+      - ./backend/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vertex -d vertex_rd"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: ./backend
+    container_name: vertex-api
+    environment:
+      DATABASE_URL: postgresql://vertex:vertex123@postgis:5432/vertex_rd
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgis:
+        condition: service_healthy
+    volumes:
+      - ..:/vertex_data:ro
+
+volumes:
+  vertex_pgdata:
