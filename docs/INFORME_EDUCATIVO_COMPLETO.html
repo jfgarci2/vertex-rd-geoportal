@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>VERTEX RD — Informe Educativo y Portafolio</title>
+  <style>
+    :root {
+      --navy: #1e2130;
+      --gold: #c9a84c;
+      --green: #2ecc71;
+      --blue: #3498db;
+      --purple: #9b59b6;
+      --muted: #6b7280;
+      --bg: #f8f9fc;
+    }
+    @page { size: A4; margin: 14mm 16mm; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      color: #1a1a2e;
+      line-height: 1.55;
+      max-width: 210mm;
+      margin: 0 auto;
+      background: #fff;
+    }
+    .no-print {
+      background: #fff8e1;
+      border: 1px solid #f1c40f;
+      padding: 12px 16px;
+      margin: 12px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+    .cover {
+      min-height: 260mm;
+      padding: 24mm 16mm;
+      background: linear-gradient(145deg, #1e2130 0%, #2a3148 55%, #1a1f2e 100%);
+      color: #fff;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .cover h1 { font-size: 2.4rem; margin: 0 0 0.5rem; color: #ffe566; }
+    .cover .sub { font-size: 1.15rem; color: #c9d1e0; margin-bottom: 2rem; }
+    .cover .meta { font-size: 0.95rem; color: #9aa0b4; line-height: 1.8; }
+    .cover .live {
+      margin-top: 2rem;
+      padding: 1rem 1.25rem;
+      background: rgba(46, 204, 113, 0.15);
+      border: 1px solid rgba(46, 204, 113, 0.4);
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+    .cover .live strong { color: #2ecc71; }
+    section { padding: 0 16mm 8mm; page-break-inside: avoid; }
+    h2 {
+      color: var(--navy);
+      border-bottom: 3px solid var(--gold);
+      padding-bottom: 0.35rem;
+      margin-top: 1.75rem;
+      font-size: 1.35rem;
+      page-break-after: avoid;
+    }
+    h3 { color: #2a2d3a; margin-top: 1.25rem; font-size: 1.05rem; }
+    p, li { font-size: 0.92rem; }
+    .highlight {
+      background: var(--bg);
+      border-left: 4px solid var(--gold);
+      padding: 0.85rem 1rem;
+      margin: 1rem 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px 14px;
+      background: #fff;
+    }
+    .card h4 { margin: 0 0 6px; font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    .score { font-size: 2rem; font-weight: 700; color: var(--navy); }
+    .score.good { color: #16a34a; }
+    .score.mid { color: #ca8a04; }
+    table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.85rem; }
+    th, td { border: 1px solid #ddd; padding: 6px 8px; text-align: left; }
+    th { background: var(--navy); color: #fff; }
+    tr:nth-child(even) { background: #f9fafb; }
+    .badge {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--gold);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      margin: 2px;
+    }
+    pre, code {
+      font-family: Consolas, monospace;
+      font-size: 0.78rem;
+      background: #f4f4f5;
+      border-radius: 4px;
+    }
+    pre { padding: 10px; overflow-x: auto; white-space: pre-wrap; }
+    code { padding: 1px 4px; }
+    .chart-row { margin: 8px 0; }
+    .chart-label { font-size: 0.78rem; color: var(--muted); margin-bottom: 2px; }
+    .bar-wrap { background: #e5e7eb; border-radius: 4px; height: 18px; overflow: hidden; }
+    .bar { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 6px; font-size: 0.7rem; color: #fff; font-weight: 600; min-width: 28px; }
+    .bar.gold { background: linear-gradient(90deg, #c9a84c, #e8c96a); color: #1a1a2e; }
+    .bar.green { background: linear-gradient(90deg, #16a34a, #2ecc71); }
+    .bar.blue { background: linear-gradient(90deg, #2563eb, #3498db); }
+    .bar.purple { background: linear-gradient(90deg, #7c3aed, #9b59b6); }
+    .diagram {
+      background: #f8f9fc;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px;
+      margin: 1rem 0;
+      text-align: center;
+    }
+    .diagram svg { max-width: 100%; height: auto; }
+    .glossary dt { font-weight: 700; color: var(--navy); margin-top: 0.6rem; }
+    .glossary dd { margin: 0.2rem 0 0.5rem 1rem; color: #374151; }
+    .page-break { page-break-before: always; }
+    .footer-note { font-size: 0.75rem; color: var(--muted); margin-top: 2rem; padding-top: 0.5rem; border-top: 1px solid #eee; }
+    @media print {
+      .no-print { display: none !important; }
+      body { max-width: none; }
+      .cover { min-height: auto; padding: 20mm 16mm; }
+    }
+  </style>
+</head>
+<body>
+
+<p class="no-print">
+  <strong>Guardar como PDF:</strong> Abre este archivo en Chrome → <kbd>Ctrl+P</kbd> → Destino: <strong>Guardar como PDF</strong> → Márgenes: Predeterminado → Activar <strong>Gráficos de fondo</strong>.
+</p>
+
+<div class="cover">
+  <h1>VERTEX RD</h1>
+  <p class="sub">Geoportal Catastral 360° — Informe educativo, portafolio y guía de monetización</p>
+  <p class="meta">
+    <strong>Autor:</strong> José Fernando García Pérez<br>
+    <strong>Roles:</strong> Geospatial Engineer · Analytics Engineer · Urban GIS<br>
+    <strong>Fecha:</strong> Junio 2026 · Distrito Nacional, República Dominicana
+  </p>
+  <div class="live">
+    <strong>✓ Demo en producción verificada</strong><br>
+    URL: https://vertex-rd-geoportal.onrender.com<br>
+    API: 140,237 predios · SQLite · css/js OK
+  </div>
+</div>
+
+<section>
+  <h2>1. Veredicto: ¿listo para reclutadores y freelancing?</h2>
+
+  <div class="highlight">
+    <strong>Conclusión:</strong> Sí, el proyecto está en nivel <em>portfolio profesional desplegado</em>. Para roles de <strong>Geospatial Engineer / GIS Developer</strong> es muy sólido. Para <strong>Analytics Engineer</strong> complementa bien, pero conviene posicionarlo como <em>spatial analytics product</em>, no como clon de un stack dbt/Snowflake.
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h4>Geospatial Engineer</h4>
+      <div class="score good">8.5/10</div>
+      <p>140K polígonos, tilesets, mapa interactivo, Turf.js, API espacial. Muy atractivo para govtech, consultoras GIS, Mapbox/Esri partners.</p>
+    </div>
+    <div class="card">
+      <h4>Analytics Engineer</h4>
+      <div class="score mid">7/10</div>
+      <p>ETL Excel→JSON, KPIs, tableros, modelo analítico. Falta capa warehouse moderna (dbt/BigQuery) para AE puro en SaaS.</p>
+    </div>
+    <div class="card">
+      <h4>Freelancer / Contractor</h4>
+      <div class="score good">8/10</div>
+      <p>Demo live + dominio urbano/catastral = nicho bien pagado. Ideal para municipios, ONGs, bancos de tierra, consultoras LATAM/Europa.</p>
+    </div>
+    <div class="card">
+      <h4>Producto terminado</h4>
+      <div class="score good">9/10</div>
+      <p>No es un tutorial: es app desplegada, documentada en inglés, con case study y métricas reales.</p>
+    </div>
+  </div>
+
+  <h3>Rango de ingresos realista (referencia 2025–2026)</h3>
+  <table>
+    <tr><th>Modalidad</th><th>Geospatial / GIS</th><th>Analytics + GIS</th></tr>
+    <tr><td>Freelance (proyecto geoportal municipal)</td><td USD 8,000 – 35,000</td><td>USD 12,000 – 45,000</td></tr>
+    <tr><td>Contractor remoto (mes, LATAM→US/EU)</td><td>USD 4,000 – 12,000/mes</td><td>USD 5,000 – 14,000/mes</td></tr>
+    <tr><td>Empleo remoto internacional</td><td>USD 70k – 130k/año</td><td>USD 85k – 150k/año</td></tr>
+  </table>
+  <p><em>Factores que suben tu tarifa con este proyecto: dominio catastral, escala 140K, demo live, bilingüe, 20+ años experiencia.</em></p>
+</section>
+
+<section class="page-break">
+  <h2>2. Métricas del proyecto (gráficos)</h2>
+
+  <div class="chart-row">
+    <div class="chart-label">Predios modelados (140,237)</div>
+    <div class="bar-wrap"><div class="bar gold" style="width:100%">140,237</div></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-label">Vías analizadas (12,429 · 1,496 km)</div>
+    <div class="bar-wrap"><div class="bar blue" style="width:88%">12,429</div></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-label">Barrios / Sub-barrios (70 / 245)</div>
+    <div class="bar-wrap"><div class="bar green" style="width:70%">70 barrios</div></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-label">Capas GIS publicadas (22 shapefiles → 10 tilesets Mapbox)</div>
+    <div class="bar-wrap"><div class="bar purple" style="width:82%">22 → 10</div></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-label">Espacios públicos inventariados (721)</div>
+    <div class="bar-wrap"><div class="bar green" style="width:65%">721</div></div>
+  </div>
+
+  <table>
+    <tr><th>Componente</th><th>Cantidad</th><th>Significado</th></tr>
+    <tr><td>Predios (SQLite + mapa)</td><td>140,237</td><td>Universo catastral DN</td></tr>
+    <tr><td>Tipologías densidad</td><td>9 (BM→AI)</td><td>Normativa Renacimiento</td></tr>
+    <tr><td>Reglas retiros</td><td>5 (R1→R3)</td><td>Restricciones de edificación</td></tr>
+    <tr><td>Endpoints API</td><td>15+</td><td>Búsqueda, KPIs, analytics</td></tr>
+    <tr><td>Idioma docs</td><td>EN + ES</td><td>Reclutadores internacionales</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>3. Arquitectura — qué construiste (diagrama)</h2>
+
+  <div class="diagram">
+    <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1e2130"/><stop offset="100%" stop-color="#3d4460"/></linearGradient>
+      </defs>
+      <!-- Fuentes -->
+      <rect x="20" y="20" width="200" height="90" rx="8" fill="#fef3c7" stroke="#c9a84c"/>
+      <text x="120" y="48" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e2130">FUENTES (local)</text>
+      <text x="120" y="68" text-anchor="middle" font-size="10" fill="#374151">22 Shapefiles · Excel · GDB</text>
+      <text x="120" y="84" text-anchor="middle" font-size="10" fill="#374151">Power BI · ArcGIS</text>
+      <!-- ETL -->
+      <rect x="260" y="30" width="120" height="70" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+      <text x="320" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Python ETL</text>
+      <text x="320" y="78" text-anchor="middle" font-size="9" fill="#374151">export_*.py</text>
+      <!-- Mapbox -->
+      <rect x="420" y="20" width="140" height="90" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+      <text x="490" y="48" text-anchor="middle" font-size="12" font-weight="bold" fill="#5b21b6">Mapbox</text>
+      <text x="490" y="68" text-anchor="middle" font-size="9" fill="#374151">10 tilesets vector</text>
+      <text x="490" y="84" text-anchor="middle" font-size="9" fill="#374151">140K polígonos</text>
+      <!-- JSON + SQLite -->
+      <rect x="260" y="130" width="160" height="70" rx="8" fill="#d1fae5" stroke="#16a34a"/>
+      <text x="340" y="158" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">data/</text>
+      <text x="340" y="178" text-anchor="middle" font-size="9" fill="#374151">JSON + predios.db</text>
+      <!-- FastAPI -->
+      <rect x="460" y="130" width="130" height="70" rx="8" fill="#fce7f3" stroke="#db2777"/>
+      <text x="525" y="158" text-anchor="middle" font-size="12" font-weight="bold" fill="#9d174d">FastAPI</text>
+      <text x="525" y="178" text-anchor="middle" font-size="9" fill="#374151">SQLite / PostGIS</text>
+      <!-- Frontend -->
+      <rect x="140" y="240" width="440" height="80" rx="8" fill="url(#g1)"/>
+      <text x="360" y="272" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffe566">GEOPORTAL WEB</text>
+      <text x="360" y="294" text-anchor="middle" font-size="10" fill="#c9d1e0">Mapbox GL JS · Turf.js · Chart.js · Ficha 360°</text>
+      <!-- Render -->
+      <rect x="200" y="350" width="320" height="55" rx="8" fill="#2ecc71" stroke="#16a34a"/>
+      <text x="360" y="382" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">Render.com (producción)</text>
+      <!-- Arrows -->
+      <path d="M220 65 L258 65" stroke="#666" marker-end="url(#arr)"/>
+      <path d="M380 65 L418 65" stroke="#666"/>
+      <path d="M340 100 L340 128" stroke="#666"/>
+      <path d="M490 110 L525 128" stroke="#666"/>
+      <path d="M340 200 L340 238" stroke="#666"/>
+      <path d="M525 200 L420 260" stroke="#666"/>
+      <path d="M360 320 L360 348" stroke="#666"/>
+    </svg>
+  </div>
+
+  <p><strong>Flujo en palabras simples:</strong> ArcGIS/Excel alimentan el sistema → Python limpia y exporta → Mapbox sirve geometrías pesadas → JSON/SQLite sirven atributos y búsqueda → FastAPI une todo → el navegador muestra mapa + analítica.</p>
+</section>
+
+<section class="page-break">
+  <h2>4. Conceptos educativos (glosario visual)</h2>
+
+  <dl class="glossary">
+    <dt>Shapefile (.shp)</dt>
+    <dd>Formato GIS clásico: geometría + atributos. Tus 22 capas (predios, barrios, vías…) son la fuente de verdad espacial.</dd>
+
+    <dt>Tileset vectorial (Mapbox)</dt>
+    <dd>Mapbox convierte millones de vértices en teselas pequeñas. El navegador solo carga lo visible en pantalla → por eso 140K predios se ven fluidos.</dd>
+
+    <dt>Mapbox GL JS</dt>
+    <dd>Librería JavaScript que pinta mapas GPU-acelerados en el browser. Reemplaza plugins pesados de Leaflet para datasets grandes.</dd>
+
+    <dt>Turf.js</dt>
+    <dd>“Excel espacial” en JavaScript: distancias, áreas, punto más cercano. Usado en herramientas de medición y rutas.</dd>
+
+    <dt>ETL (Extract-Transform-Load)</dt>
+    <dd>Tus scripts <code>export_data.py</code> y <code>export_predios_full.py</code> extraen Excel/SHP, transforman y cargan JSON/SQLite.</dd>
+
+    <dt>Ficha Predial 360°</dt>
+    <dd>Vista que cruza catastro + densidad + retiros + uso. Replica lógica DAX de Power BI en JavaScript.</dd>
+
+    <dt>FastAPI</dt>
+    <dd>Backend Python moderno. Expone REST API: búsqueda de predios, KPIs, filtros por barrio.</dd>
+
+    <dt>SQLite / PostGIS</dt>
+    <dd>SQLite: base embebida (archivo predios.db). PostGIS: PostgreSQL con funciones espaciales (Docker local, producción enterprise).</dd>
+
+    <dt>Render</dt>
+    <dd>Plataforma cloud que ejecuta tu Python 24/7 con URL pública. Plan free se duerme; demo sigue siendo válida.</dd>
+
+    <dt>Analytics Engineer vs Geospatial Engineer</dt>
+    <dd><strong>AE:</strong> modela datos, métricas, pipelines en warehouse. <strong>Geo:</strong> geometrías, mapas, análisis espacial. Tú hiciste ambos en un producto.</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>5. Qué hicimos paso a paso (cronología del proyecto)</h2>
+
+  <table>
+    <tr><th>Fase</th><th>Qué hiciste</th><th>Archivos clave</th></tr>
+    <tr><td>1. GIS base</td><td>22 shapefiles + GDB en ArcGIS</td><td>SHAPEFILES/, VERTEX_RD.gdb</td></tr>
+    <tr><td>2. Mapa web inicial</td><td>html59.html con Mapbox</td><td>MAPBOX GS JL/html59.html</td></tr>
+    <tr><td>3. Analítica ejecutiva</td><td>Dashboard Power BI</td><td>VERTEX_DN_RD_V3.pbix</td></tr>
+    <tr><td>4. Geoportal integrado</td><td>9 vistas + ficha + capas</td><td>vertex-rd-geoportal/</td></tr>
+    <tr><td>5. Backend API</td><td>FastAPI + SQLite 140K</td><td>backend/app/main.py</td></tr>
+    <tr><td>6. Deploy producción</td><td>GitHub + Render + predios.db</td><td>render.com live</td></tr>
+  </table>
+
+  <h3>Módulos del geoportal</h3>
+  <ul>
+    <li><strong>Presentación:</strong> mapa interactivo, capas, basemaps (satélite/calles/híbrido)</li>
+    <li><strong>Ficha Predial:</strong> búsqueda catastral + normativa</li>
+    <li><strong>Estadísticas / Vías / Espacios:</strong> tableros Chart.js filtrables por barrio</li>
+    <li><strong>Herramientas:</strong> medir, distancias a POIs, calcular ruta</li>
+  </ul>
+</section>
+
+<section class="page-break">
+  <h2>6. Stack tecnológico explicado</h2>
+  <p>
+    <span class="badge">Mapbox GL JS 3.10</span>
+    <span class="badge">Turf.js 6.5</span>
+    <span class="badge">Chart.js 4.4</span>
+    <span class="badge">FastAPI</span>
+    <span class="badge">SQLite 140K</span>
+    <span class="badge">PostGIS</span>
+    <span class="badge">Python/pandas/geopandas</span>
+    <span class="badge">Render</span>
+    <span class="badge">GitHub</span>
+    <span class="badge">Power BI</span>
+    <span class="badge">ArcGIS</span>
+  </p>
+
+  <h3>Frontend (lo que ve el usuario)</h3>
+  <pre>index.html → css/styles.css → js/map-core.js (mapa)
+           → js/ficha-predial.js (ficha)
+           → js/analytics.js (tableros)
+           → js/api-client.js (llamadas /api/*)</pre>
+
+  <h3>Backend (lo que procesa datos)</h3>
+  <pre>uvicorn → FastAPI (main.py)
+        → sqlite_fallback.py (búsqueda 140K)
+        → sirve index.html + css + js + data/</pre>
+</section>
+
+<section>
+  <h2>7. Cómo presentarlo a un reclutador (30 segundos)</h2>
+  <div class="highlight">
+    “Built a production cadastral geoportal for 140,237 parcels in Santo Domingo: Mapbox vector tiles, FastAPI search API, urban zoning analytics, deployed live on Render. End-to-end from ArcGIS shapefiles to web product.”
+  </div>
+  <p><strong>Links para LinkedIn / CV:</strong></p>
+  <ul>
+    <li>Demo: https://vertex-rd-geoportal.onrender.com</li>
+    <li>Repo: https://github.com/jfgarci2/vertex-rd-geoportal</li>
+    <li>Case study: docs/CASE_STUDY.md (inglés)</li>
+  </ul>
+
+  <h3>Fortalezas a enfatizar en entrevista</h3>
+  <ul>
+    <li>Escala real (140K registros, no dataset de juguete)</li>
+    <li>Decisiones técnicas: tilesets vs GeoJSON, SQLite fallback, API REST</li>
+    <li>Deploy completo (no solo screenshot)</li>
+    <li>Dominio urbano/catastral (municipios, bancos, smart cities)</li>
+  </ul>
+
+  <h3>Gap honesto (si preguntan Analytics Engineer puro)</h3>
+  <p>“Analytics layer uses JSON aggregates and SQL search; in enterprise I’d migrate KPIs to dbt + Snowflake/BigQuery with semantic layer — this project proves I can deliver spatial analytics products end-to-end.”</p>
+</section>
+
+<section class="page-break">
+  <h2>8. Cómo monetizar como freelancer / contractor</h2>
+
+  <h3>Paquetes de servicio que puedes vender</h3>
+  <table>
+    <tr><th>Paquete</th><th>Entregable</th><th>Precio orientativo</th></tr>
+    <tr><td>Geoportal municipal básico</td><td>Mapa + 5 capas + búsqueda</td><td>USD 8,000 – 15,000</td></tr>
+    <tr><td>Geoportal + analítica (como VERTEX)</td><td>Mapa + API + tableros + ficha</td><td>USD 18,000 – 35,000</td></tr>
+    <tr><td>Mantenimiento mensual</td><td>Hosting, datos, soporte</td><td>USD 800 – 2,500/mes</td></tr>
+    <tr><td>Consultoría GIS 2–4 sem</td><td>Auditoría + pipeline datos</td><td>USD 3,000 – 8,000</td></tr>
+  </table>
+
+  <h3>Clientes objetivo</h3>
+  <ul>
+    <li>Ayuntamientos / ministerios (LATAM, España, Portugal)</li>
+    <li>Consultoras de urbanismo y catastro</li>
+    <li>Bancos de tierras, ONGs, proyectos IDB/BM</li>
+    <li>Empresas de location intelligence</li>
+  </ul>
+
+  <h3>Plataformas para conseguir trabajo</h3>
+  <ul>
+    <li>LinkedIn (inglés) + este demo en Featured</li>
+    <li>Toptal, Upwork (proyectos GIS premium)</li>
+    <li>UNDP, World Bank consultants roster</li>
+    <li>Esri partner network, Mapbox solutions partners</li>
+  </ul>
+</section>
+
+<section>
+  <h2>9. Próximos pasos recomendados (opcional)</h2>
+  <ol>
+    <li>Video demo 2 min (Loom) recorriendo mapa + búsqueda + ficha</li>
+    <li>Post LinkedIn en inglés con métricas y link live</li>
+    <li>Segundo proyecto AE puro (dbt + métricas) para complementar</li>
+    <li>Certificación Mapbox o Esri (refuerzo, no obligatorio)</li>
+  </ol>
+
+  <p class="footer-note">
+    VERTEX RD Geoportal · Documento generado Junio 2026 · Para PDF: Ctrl+P en Chrome.<br>
+    Autor: José Fernando García Pérez · jfgarci2@github · Portfolio: jfgarcia-portfolio.vercel.app
+  </p>
+</section>
+
+</body>
+</html>
