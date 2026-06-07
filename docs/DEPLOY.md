@@ -109,26 +109,47 @@ You do **not** need Docker on your PC. Render runs Python from your GitHub repo.
 Success check: `/api/health` shows `"css_exists": true`.  
 **"Sin predios.db"** is normal without the database file — map + JSON still work.
 
-### Activar SQLite 140K en Render (opcional)
+### Activar SQLite 140K en Render (plan free)
 
-`data/predios.db` (~38 MB) **no está en GitHub** (gitignore). Para búsqueda API completa:
+Render **Secret Files solo acepta texto** (`.env`, claves) — **no puedes subir** `predios.db` binario ahí.
 
-1. En tu PC, el archivo está en:  
-   `vertex-rd-geoportal\data\predios.db`  
-   (si no existe: `python scripts/export_predios_full.py`)
+Tienes **2 opciones**:
 
-2. Render → servicio → **Environment** → baja a **Secret Files**
+#### Opción 1 — GitHub Release + URL (recomendada, repo público)
 
-3. **Add Secret File**
-   - Filename: `predios.db`
-   - Sube el archivo desde tu PC
+1. En tu PC, el archivo está en `vertex-rd-geoportal\data\predios.db` (~37 MB)
 
-4. **Manual Deploy** (redeploy)
+2. GitHub → repo → **Releases → Create a new release**
+   - Tag: `v1.0.0-data`
+   - Título: `predios.db`
+   - Arrastra **`predios.db`** al área de assets (aquí sí hay upload)
+   - **Publish release**
 
-5. Verifica: `/api/health` debe decir  
-   `"status": "ok", "backend": "sqlite", "predios": 140237`
+3. Clic derecho en el asset `predios.db` → **Copy link address**  
+   Ejemplo: `https://github.com/jfgarci2/vertex-rd-geoportal/releases/download/v1.0.0-data/predios.db`
 
-El backend lee automáticamente `/etc/secrets/predios.db` en Render.
+4. Render → **Environment → Environment Variables** (no Secret Files):
+   - Key: `PREDIOS_DB_URL`
+   - Value: la URL copiada
+
+5. **Save → Manual Deploy → Clear build cache & deploy**
+
+6. Verifica `/api/health` → `"status": "ok", "backend": "sqlite", "predios": 140237`
+
+#### Opción 2 — Incluir en GitHub (más simple, +37 MB en el repo)
+
+```powershell
+cd vertex-rd-geoportal
+git add -f data/predios.db
+git commit -m "data: predios.db for Render SQLite API"
+git push origin main
+```
+
+Render redeploy automático — no necesitas `PREDIOS_DB_URL`.
+
+---
+
+Sin `predios.db`, el geoportal funciona en **modo JSON** (mapa + ficha + tableros). Solo falta búsqueda API 140K.
 
 ---
 

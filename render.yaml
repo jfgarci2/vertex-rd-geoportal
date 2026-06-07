@@ -3,7 +3,7 @@ services:
     name: vertex-rd-geoportal
     runtime: python
     plan: free
-    buildCommand: pip install -r backend/requirements.txt
+    buildCommand: python scripts/download_predios_db.py && pip install -r backend/requirements.txt
     startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /api/health
     envVars:
