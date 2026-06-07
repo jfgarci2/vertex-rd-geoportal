@@ -13,6 +13,7 @@ COPY backend/ backend/
 COPY index.html css/ js/ data/ assets/ ./
 
 ENV PYTHONPATH=/app/backend
+ENV VERTEX_STATIC_DIR=/app
 WORKDIR /app/backend
 
 EXPOSE 8000

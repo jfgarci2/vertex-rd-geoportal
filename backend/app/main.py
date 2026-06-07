@@ -5,6 +5,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy import create_engine, text
 from sqlalchemy.exc import OperationalError
@@ -13,8 +14,20 @@ from . import sqlite_fallback as sqlite
 
 load_dotenv()
 
-# Carpeta raíz del geoportal (index.html, js/, css/, data/)
-STATIC_DIR = Path(__file__).resolve().parents[2]
+
+def resolve_static_dir() -> Path:
+    """Locate geoportal root (index.html) — works locally and in Docker on Render."""
+    env = os.getenv("VERTEX_STATIC_DIR")
+    if env:
+        return Path(env)
+    here = Path(__file__).resolve()
+    for candidate in (here.parents[2], here.parents[1], Path("/app"), here.parents[3]):
+        if (candidate / "index.html").is_file():
+            return candidate
+    return here.parents[2]
+
+
+STATIC_DIR = resolve_static_dir()
 
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
@@ -61,23 +74,44 @@ def row_to_dict(row):
 @app.on_event("startup")
 def startup():
     get_engine()
+    index = STATIC_DIR / "index.html"
+    print(f"[VERTEX] STATIC_DIR={STATIC_DIR} index_exists={index.is_file()}")
+
+
+def _static_meta():
+    return {
+        "static_dir": str(STATIC_DIR),
+        "index_exists": (STATIC_DIR / "index.html").is_file(),
+    }
 
 
 @app.get("/api/health")
 def health():
+    meta = _static_meta()
     engine = get_engine()
     if _use_sqlite and sqlite.db_available():
-        return {"status": "ok", "backend": "sqlite", "predios": sqlite.count_predios()}
+        return {"status": "ok", "backend": "sqlite", "predios": sqlite.count_predios(), **meta}
     if engine:
         try:
             with engine.connect() as conn:
                 n = conn.execute(text("SELECT COUNT(*) FROM predios")).scalar()
-            return {"status": "ok", "backend": "postgis", "predios": n}
-        except Exception as e:
+            return {"status": "ok", "backend": "postgis", "predios": n, **meta}
+        except Exception:
             pass
     if sqlite.db_available():
-        return {"status": "ok", "backend": "sqlite", "predios": sqlite.count_predios()}
-    return {"status": "error", "detail": "Sin base de datos"}
+        return {"status": "ok", "backend": "sqlite", "predios": sqlite.count_predios(), **meta}
+    return {"status": "degraded", "detail": "Sin base de datos", **meta}
+
+
+@app.get("/")
+def serve_index():
+    index = STATIC_DIR / "index.html"
+    if not index.is_file():
+        raise HTTPException(
+            status_code=500,
+            detail=f"index.html not found under {STATIC_DIR}",
+        )
+    return FileResponse(index, media_type="text/html")
 
 
 @app.get("/api/kpis")
@@ -309,5 +343,17 @@ def config_runtime():
     return PlainTextResponse(body, media_type="application/javascript")
 
 
-# Geoportal estático — DEBE ir al final (después de rutas /api)
-app.mount("/", StaticFiles(directory=str(STATIC_DIR), html=True), name="static")
+def mount_static_assets():
+    """Serve css/js/data/assets without a root mount that can shadow /api routes."""
+    mounts = {
+        "css": STATIC_DIR / "css",
+        "js": STATIC_DIR / "js",
+        "data": STATIC_DIR / "data",
+        "assets": STATIC_DIR / "assets",
+    }
+    for name, folder in mounts.items():
+        if folder.is_dir():
+            app.mount(f"/{name}", StaticFiles(directory=str(folder)), name=name)
+
+
+mount_static_assets()
